@@ -3,7 +3,7 @@ services:
   wordpress:
     image: wordpress
     volumes:
-      - .:/usr/src/wordpress/wp-content/themes/salvageparty
+      - .:/share/themes/salvageparty
     ports:
       - "80:80"
     depends_on:

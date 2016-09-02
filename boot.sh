@@ -1,5 +1,3 @@
 docker-compose up -d
-docker-compose run wordpress chown -R www-data /usr/src/wordpress/wp-content/
-docker-compose run wordpress chgrp -R www-data /usr/src/wordpress/wp-content/
-docker-compose run wordpress chown -R www-data ./
-docker-compose run wordpress chgrp -R www-data ./
+docker-compose exec wordpress ln -s /share/themes/salvageparty /var/www/html/wp-content/themes/salvageparty
+docker-compose exec wordpress chown www-data:www-data /var/www/html/wp-content/themes/salvageparty
