@@ -7,7 +7,7 @@
 おすすめかも
 
 ```
-docker-compose up -d
+bash boot.sh
 ```
 
 → http://localhost/ にサーバが立つ
