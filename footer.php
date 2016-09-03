@@ -33,17 +33,18 @@
       </ul>
     </footer>
 
-    <p class="pageFooter__note">
-      <small>
-        本ウェブサイトは、東京都環境局「持続可能な資源利用」に向けたモデル事業
-        （2015年度）として制作されました。
-      </small>
-    </p>
-    
-    <p class="pageFooter__license">
-      <small>
-        &copy; <a href="http://foodsalvage.or.jp">Food Salvage</a>
-      </small>
-    </p>
+    <div class="pageFooter__notes footerNotes">
+      <p class="footerNotes__note">
+        <small>
+          本ウェブサイトは、東京都環境局「持続可能な資源利用」に向けたモデル事業
+          （2015年度）として制作されました。
+        </small>
+      </p>
+      <p class="footerNotes__license">
+        <small>
+          &copy; <a href="http://foodsalvage.or.jp">Food Salvage</a>
+        </small>
+      </p>
+    </div>
   </body>
 </html>
