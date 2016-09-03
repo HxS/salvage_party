@@ -2,6 +2,18 @@
 
 ## getting started
 
+### gulp
+
+CSSとJSをトランスパイルする。
+
+```
+npm install --save-dev
+npm start
+```
+
+以降、`npm start`実行中はsassファイル、jsファイルに更新があったら
+トランスパイル処理が走るようになる。
+
 ### docker / docker-compose
 
 おすすめかも
@@ -28,3 +40,12 @@ vagrant up
 ```
 
 → http://172.17.8.123/ にサーバが立つ
+
+## 設計の方針
+
+* docker-compose 系のコマンドをboot.shにまとめています。
+    * docker-compose を介してwordpressのプラグインも導入してます。
+* BEMつかってます。(CSS設計 / クラス名の付け方)
+* babelつかってます。(Alt JS)
+* bootstrap-sassをつかっています。
+    * sassのextend機能をつかってCODINGしていきたいです。
