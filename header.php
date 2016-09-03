@@ -31,12 +31,12 @@
       <ul class="pageHeader__contactList">
         <li><a href="#"><img src="<?php
           echo get_template_directory_uri() . '/images/contact_mail.png';
-        ?>" alt="Salvage Party" /></a></li>
+        ?>" alt="mail" /></a></li>
         <li><a href="#"><img src="<?php
           echo get_template_directory_uri() . '/images/contact_twitter.png';
-        ?>" alt="Salvage Party" /></a></li>
+        ?>" alt="twitter" /></a></li>
         <li><a href="#"><img src="<?php
           echo get_template_directory_uri() . '/images/contact_facebook.png';
-        ?>" alt="Salvage Party" /></a></li>
+        ?>" alt="facebook" /></a></li>
       </ul>
     </header>
