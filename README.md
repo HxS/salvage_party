@@ -22,7 +22,7 @@ npm start
 bash boot.sh
 ```
 
-→ http://localhost/ にサーバが立つ
+→ http://localhost:8001/ にサーバが立つ
 
 ### 普通のLAMP環境 / MAMP
 
@@ -39,7 +39,7 @@ bash boot.sh
 vagrant up
 ```
 
-→ http://172.17.8.123/ にサーバが立つ
+→ http://172.17.8.123:8001/ にサーバが立つ
 
 ## 設計の方針
 

@@ -5,7 +5,7 @@ services:
     volumes:
       - .:/share/themes/salvageparty
     ports:
-      - "80:80"
+      - "8001:80"
     depends_on:
       - db
     environment:
