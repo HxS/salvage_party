@@ -1,55 +1,37 @@
-// .pageHeader
-// ページ全体のヘッダー
+// .mainContent
+// ページのコンテンツの部分。
+// コンテンツの部分のうちでも共通部分
 
-.pageHeader {
+.mainContent {
   @include centering-content;
 
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 10px 20px 30px;
+  // .contentHeader
+  // コンテンツ全体のheader
+  .contentHeader {
+    border-bottom: 1px solid $theme-yellow-color;
 
-  &__logo {
-    display: inline-block;
-  }
-
-  &__navigation {
-    display: inline-block;
-    position: relative;
-    bottom: 30px;
-    font-size: 12px;
-
-    li {
+    &__title {
+      font-size: 28px;
+      font-weight: normal;
       display: inline-block;
-
-      &:not(:last-child)::after {
-        content: '';
-        display: inline-block;
-        position: relative;
-        top: 4px;
-        height: 16px;
-        width: 1px;
-        background-color: $header-line-color;
-      }
-
-      a {
-        color: $base-text-color;
-        text-decoration: none;
-        padding: 30px;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+      margin: 0;
     }
-  }
 
-  &__contactList {
-    display: inline-block;
-    position: relative;
-    bottom: 20px;
-    font-size: 12px;
-    li {
+    &__subTitle {
+      font-size: 10px;
       display: inline-block;
-      padding: 0 15px;
+      margin: 0 60px 0 30px;
+    }
+
+    .breadcrumb {
+      font-size: 12px;
+      display: inline-block;
+      div {
+        display: inline-block;
+      }
+      a {
+        @include anchor-font-sanitize;
+      }
     }
   }
 }
