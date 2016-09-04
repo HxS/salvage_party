@@ -1,0 +1,18 @@
+// mixins.scss : mixinはここにかく
+
+// centering-content
+// 真ん中のよっているコンテンツを作るためのmixin
+@mixin centering-content {
+  width: $content-width;
+  margin: 0 auto;
+}
+
+// anchor-font-sanitize
+// aタグのフォントをデフォルトのものに変更するためのmixin
+@mixin anchor-font-sanitize {
+  color: $base-text-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
