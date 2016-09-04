@@ -4,7 +4,7 @@
           <div class="footerLink__title footerLink__title--text">
             CONTACT
           </div>
-          <small class="footerLink__descrition">
+          <small class="footerLink__description">
             取材依頼・その他お問い合わせ
           </small>
         </li>
@@ -15,7 +15,7 @@
               echo '/images/logo_food_salvage.png';
             ?>" alt="Food Salvage" />
           </div>
-          <small class="footerLink__descrition">
+          <small class="footerLink__description">
             運営団体について
           </small>
         </li>
@@ -31,20 +31,20 @@
         <li><a href="#">Information</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
-    </footer>
 
-    <div class="pageFooter__notes footerNotes">
-      <p class="footerNotes__note">
-        <small>
-          本ウェブサイトは、東京都環境局「持続可能な資源利用」に向けたモデル事業
-          （2015年度）として制作されました。
-        </small>
-      </p>
-      <p class="footerNotes__license">
-        <small>
-          &copy; <a href="http://foodsalvage.or.jp">Food Salvage</a>
-        </small>
-      </p>
-    </div>
+      <div class="pageFooter__notes footerNotes">
+        <p class="footerNotes__note">
+          <small>
+            本ウェブサイトは、東京都環境局「持続可能な資源利用」に向けたモデル事業
+            （2015年度）として制作されました。
+          </small>
+        </p>
+        <p class="footerNotes__license">
+          <small>
+            &copy; 2016 <a href="http://foodsalvage.or.jp">Food Salvage</a>
+          </small>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -3,7 +3,7 @@
 // centering-content
 // 真ん中のよっているコンテンツを作るためのmixin
 @mixin centering-content {
-  width: 1060px;
+  width: $content-width;
   margin: 0 auto;
 }
 
