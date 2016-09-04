@@ -47,5 +47,4 @@ vagrant up
     * docker-compose を介してwordpressのプラグインも導入してます。
 * BEMつかってます。(CSS設計 / クラス名の付け方)
 * babelつかってます。(Alt JS)
-* bootstrap-sassをつかっています。
-    * sassのextend機能をつかってCODINGしていきたいです。
+* bourbonつかってます。(Sassのmixin集)

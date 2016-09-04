@@ -8,6 +8,11 @@ import minifyify from 'minifyify'
 import source from 'vinyl-source-stream';
 import marked from 'marked';
 import bulkSass from 'gulp-sass-bulk-import'
+import bourbon from 'node-bourbon'
+import neat from 'node-neat'
+
+bourbon.with(["./sass/*.scss", "./sass/**/*.scss"]);
+neat.with(["./sass/*.scss", "./sass/**/*.scss"]);
 
 gulp.task('watch', () => {
   gulp.watch(["js/src/*.babel.js", "js/src/**/*.babel.js"], ["browserify"]);
@@ -18,7 +23,10 @@ gulp.task('sass', () => {
   gulp.src('./sass/build.scss')
     .pipe(plumber())
     .pipe(bulkSass())
-    .pipe(sass({ importer: compass }))
+    .pipe(sass({
+      importer: compass,
+      includePaths: bourbon.includePaths.concat(neat.includePaths)
+    }))
     .pipe(gulp.dest('./'));
 });
 
