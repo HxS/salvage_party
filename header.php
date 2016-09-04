@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php
-      echo get_template_directory_uri() . '/style.css';
+      echo get_template_directory_uri() . '/build.css';
     ?>
     ">
     <title>Salvage Party</title>
@@ -11,7 +11,7 @@
 
   <body>
     <header class="pageHeader">
-      <h1>
+      <h1 class="pageHeader__logo">
         <a href="#"><img src="<?php
           echo get_template_directory_uri() . '/images/header_logo.png';
         ?>" alt="Salvage Party" /></a>

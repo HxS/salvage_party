@@ -1,0 +1,9 @@
+// centering-content
+// 真ん中のよっているコンテンツを作るためのmixin
+// usage
+// @include centering-content;
+
+@mixin centering-content {
+  width: 1100px;
+  margin: 0 auto;
+}
