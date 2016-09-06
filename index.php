@@ -3,6 +3,11 @@
 <div id='index' class="index">
   <div class='iframe-content'>
     <div id="player"></div>
+    <div class="eyecatch">
+      <p class='catch'>
+        もてあましている食材に、最高のスポットライトを。
+      </p>
+    </div>
   </div>
 </div>
 
