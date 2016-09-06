@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: SCHEDULE
+Template Name: PARTNER
 */
 
 get_header(); ?>
