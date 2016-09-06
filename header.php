@@ -21,12 +21,24 @@
 
       <nav class="pageHeader__navigation">
         <ul>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">ACTION</a></li>
-          <li><a href="#">SCHEDULE</a></li>
-          <li><a href="#">TOPIC</a></li>
-          <li><a href="#">REPORT</a></li>
-          <li><a href="#">FEATURE</a></li>
+          <li><a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'ABOUT' ) ) );
+          ?>">ABOUT</a></li>
+          <li><a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'ACTION' ) ) );
+          ?>">ACTION</a></li>
+          <li><a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'SCHEDULE' ) ) );
+          ?>">SCHEDULE</a></li>
+          <li><a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'TOPIC' ) ) );
+          ?>">TOPIC</a></li>
+          <li><a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'REPORT' ) ) );
+          ?>">REPORT</a></li>
+          <li><a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'FEATURE' ) ) );
+          ?>">FEATURE</a></li>
         </ul>
       </nav>
 
