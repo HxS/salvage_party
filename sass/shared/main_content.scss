@@ -49,4 +49,16 @@
       margin: 0;
     }
   }
+
+  &--widePage {
+    .mainContent__article {
+      display: block;
+      width: 960px;
+      margin: 0 50px;
+      font-size: 20px;
+      ul {
+        list-style: circle;
+      }
+    }
+  }
 }
