@@ -36,6 +36,7 @@ get_header(); ?>
 
 
     <article class="mainContent__article">
+      <?php the_content(); ?>
       <!-- ここから -->
       <ul>
         <li>
@@ -75,7 +76,6 @@ get_header(); ?>
         </li>
       </ul>
       <!-- ここまで -->
-      <?php the_content(); ?>
     </article>
   <?php get_sidebar(); ?>
 </div>
