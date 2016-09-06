@@ -25,7 +25,7 @@ function breadcrumb(){
           $str.= 'itemtype="http://data-vocabulary.org/Breadcrumb">';
           $str.= '<a href="'. get_category_link($ancestor);
           $str.= '" itemprop="url"><span itemprop="title">';
-          $str.= get_cat_name($ancestor) .'</span></a> &gt;</div>';
+          $str.= get_cat_name($ancestor) .'</span></a> &gt; </div>';
         }
       }
       $str.= '<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
