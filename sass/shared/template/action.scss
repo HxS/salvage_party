@@ -1,0 +1,21 @@
+// action.php用
+
+.mainContent--action ul {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+.mainContent--action li {
+  display: inline-block;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  width: 45%;
+  margin: 0 20px 30px 0;
+}
+
+.mainContent--action li img {
+  width: 100%;
+  border-radius: 10px;
+}
