@@ -7,3 +7,9 @@ html, body {
 ul {
   list-style: none;
 }
+
+hr {
+  @include centering-content;
+  border-color: $theme-yellow-color;
+  border-style: solid;
+}

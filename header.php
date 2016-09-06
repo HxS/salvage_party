@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php
       echo get_template_directory_uri() . '/build.css';
-    ?>
-    ">
+    ?>">
     <title>Salvage Party</title>
   </head>
 
