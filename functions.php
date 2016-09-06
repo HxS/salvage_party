@@ -12,7 +12,7 @@ function breadcrumb(){
     $str.= '<a href="';
     $str.= home_url();
     $str.= '" itemprop="url"><span itemprop="title">Home</span></a> ';
-    $str.= '&gt;</div>';
+    $str.= '&gt; </div>';
 
     if(is_category()) {
       $cat = get_queried_object();
@@ -25,7 +25,7 @@ function breadcrumb(){
           $str.= 'itemtype="http://data-vocabulary.org/Breadcrumb">';
           $str.= '<a href="'. get_category_link($ancestor);
           $str.= '" itemprop="url"><span itemprop="title">';
-          $str.= get_cat_name($ancestor) .'</span></a> &gt;</div>';
+          $str.= get_cat_name($ancestor) .'</span></a> &gt; </div>';
         }
       }
       $str.= '<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
@@ -41,7 +41,7 @@ function breadcrumb(){
           $str.= 'itemtype="http://data-vocabulary.org/Breadcrumb">';
           $str.= '<a href="'. get_permalink($ancestor);
           $str.= '" itemprop="url"><span itemprop="title">';
-          $str.= get_the_title($ancestor) .'</span></a> &gt;</div>';
+          $str.= get_the_title($ancestor) .'</span></a> &gt; </div>';
         }
       }
       $str.= '<div itemscope ';
@@ -59,7 +59,7 @@ function breadcrumb(){
           $str.= 'itemtype="http://data-vocabulary.org/Breadcrumb">';
           $str.= '<a href="'. get_category_link($ancestor).'" itemprop="url">';
           $str.= '<span itemprop="title">'. get_cat_name($ancestor);
-          $str.= '</span></a> &gt;</div>';
+          $str.= '</span></a> &gt; </div>';
         }
       }
       $str.='<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';

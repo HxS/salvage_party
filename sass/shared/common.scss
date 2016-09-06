@@ -13,3 +13,7 @@ hr {
   border-color: $theme-yellow-color;
   border-style: solid;
 }
+
+.clearfix {
+  @include clearfix;
+}

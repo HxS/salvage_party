@@ -22,14 +22,30 @@
       </ul>
 
       <ul class="pageFooter__siteMap siteMap">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Schedule</a></li>
-        <li><a href="#">Topic</a></li>
-        <li><a href="#">Report</a></li>
-        <li><a href="#">Feature</a></li>
-        <li><a href="#">Information</a></li>
-        <li><a href="#">FAQ</a></li>
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'ABOUT' ) ) );
+        ?>">About</a></li>
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'ACTION' ) ) );
+        ?>">Action</a></li>
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'SCHEDULE' ) ) );
+        ?>">Schedule</a></li>
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'TOPIC' ) ) );
+        ?>">Topic</a></li>
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'REPORT' ) ) );
+        ?>">Report</a></li>
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'FEATURE' ) ) );
+        ?>">Feature</a></li>
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'INFORMATION' ) ) );
+        ?>">Information</a></li>
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'FAQ' ) ) );
+        ?>">FAQ</a></li>
       </ul>
 
       <div class="pageFooter__notes footerNotes">
