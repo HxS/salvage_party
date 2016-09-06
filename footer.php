@@ -47,10 +47,6 @@
       </div>
     </footer>
 
-
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    <script src='https://cdn.jsdelivr.net/jquery.tubular/1.0.1/jquery.tubular.1.0.js'></script>
-    <script src="http://www.youtube.com/player_api"></script>
     <script src="<?php
       echo get_template_directory_uri() . '/js/app.babel.js';
     ?>"></script>

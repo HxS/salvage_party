@@ -16,3 +16,53 @@
     text-decoration: underline;
   }
 }
+
+@mixin post-header {
+  @include outer-container;
+  border-bottom: 1px solid $theme-yellow-color;
+  margin-bottom: 50px;
+
+  &__title {
+    font-size: 28px;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0;
+    &--left {
+      @include span-columns(8);
+      display: block;
+    }
+    &--right {
+      @include span-columns(4);
+      display: block;
+      padding-left: 20px;
+    }
+  }
+
+  &__subTitle {
+    font-size: 10px;
+    display: inline-block;
+    margin: 0 60px 0 30px;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    display: inline-block;
+    div {
+      display: inline-block;
+    }
+    a {
+      @include anchor-font-sanitize;
+    }
+  }
+}
+
+@mixin more-button {
+  display: block;
+  text-align: center;
+  background-color: $navy-color;
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  padding: 5px 0;
+  margin-bottom: 40px;
+}
