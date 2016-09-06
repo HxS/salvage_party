@@ -1,38 +1,33 @@
 <?php get_header(); ?>
 
-<div class="mainContent mainContent--page">
-  <?php
-    global $more;
-    if(have_posts()) :
-      while(have_posts()) :
-        $more = 1;
-        the_post(); ?>
-
-        <header class="mainContent__header contentHeader">
-        	<h2 class="contentHeader__title">
-            <?php the_title(); ?>
-          </h2>
-          <p class="contentHeader__subTitle">
-            サブタイトルを表示
-          </p>
-          <?php breadcrumb(); ?>
-        </header>
-
-        <article class="mainContent__article">
-          <?php the_content(); ?>
-        </article>
-
-        <?php
-      endwhile;
-    else: ?>
-
-      <p>
-      	該当する記事が見当たりませんでした。
-      </p>
-
-    <?php endif; ?>
-
-  <?php get_sidebar(); ?>
+<div id='index' class="index">
+  <div class='iframe-content'>
+    <div id="player"></div>
+  </div>
 </div>
+
+<script src="http://www.youtube.com/player_api"></script>
+<script>
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('player', {
+      playerVars: {
+        'autoplay': 1,
+        'controls': 0,
+        'showinfo': 0,
+        'autohide': 1,
+        'loop': 1,
+        'playlist': 'n4JFXi9lOJ8',
+        'wmode':'opaque' },
+      videoId: 'n4JFXi9lOJ8',
+      events: {
+        'onReady': onPlayerReady}
+    });
+   }
+
+   function onPlayerReady(event) {
+     event.target.mute();
+   }
+</script>
 
 <?php get_footer(); ?>
