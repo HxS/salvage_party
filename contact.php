@@ -6,7 +6,7 @@ Template Name: CONTACT
 get_header(); ?>
 
 
-<div class="mainContent mainContent--action">
+<div class="mainContent mainContent--widePage">
   <?php
     global $more;
     if(have_posts()) :
@@ -36,12 +36,9 @@ get_header(); ?>
 
 
     <article class="mainContent__article">
-      <!-- ここから -->
-
-      <!-- ここまで -->
       <?php the_content(); ?>
+      <?php echo do_shortcode('[contact-form-7 id="7" title="Contact form 1"]'); ?>
     </article>
-  <?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

@@ -59,6 +59,83 @@
       ul {
         list-style: circle;
       }
+      .wpcf7-form {
+        .wpcf7-text {
+          width: 50%;
+          background: $light-gray-color;
+          border:none;
+          font-size: 16px;
+          padding: 15px 20px;
+          &.wpcf7-email {
+            width: 100%;
+          }
+        }
+        .wpcf7-textarea {
+          width: 100%;
+          min-height: 600px;
+          background: $light-gray-color;
+          border:none;
+          font-size: 16px;
+          padding: 15px 20px;
+        }
+        .wpcf7-list-item {
+          $iconColor: #53b300;
+          position: relative;
+          margin-right: 30px;
+
+          input[type=radio] {
+            position: absolute;
+          	-moz-transform:		scale(1.6);
+          	-webkit-transform:	scale(1.6);
+          	transform:		scale(1.6);
+            visibility: hidden;
+            top: 2px;
+            &:before {
+              content: '';
+              display: block;
+              visibility: visible;
+              position: absolute;
+              top: -3px;
+              left: -4px;
+              height: 20px;
+              width: 20px;
+              z-index: -2;
+              background-color: $light-gray-color;
+            	-moz-transform:		scale(0.6125);
+            	-webkit-transform:	scale(0.6125);
+            	transform:		scale(0.6125);
+            }
+            &:checked:after {
+              content: '';
+              display: block;
+              visibility: visible;
+              position: absolute;
+              top: 2px;
+              left: 1px;
+              height: 10px;
+              width: 10px;
+              z-index: -1;
+              background-color: $dark-gray-color;
+            	-moz-transform:		scale(0.6125);
+            	-webkit-transform:	scale(0.6125);
+            	transform:		scale(0.6125);
+            }
+          }
+          &-label {
+            padding-left: 25px;
+          }
+        }
+
+        .wpcf7-submit {
+          width: 50%;
+          background: $navy-color;
+          color: white;
+          border:none;
+          font-size: 16px;
+          padding: 15px 20px;
+          text-align: center;
+        }
+      }
     }
   }
 }

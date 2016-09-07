@@ -1,0 +1,9 @@
+[text* your-name placeholder "お名前"]
+
+[email* your-email placeholder "メールアドレス"]
+
+[radio radio-951 default:1 "サルベージ・パーティを開催したい" "取材依頼" "その他"]
+
+[textarea your-message]
+
+[submit "送信"]
