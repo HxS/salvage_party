@@ -47,12 +47,12 @@
           echo esc_url( get_permalink( get_page_by_title( 'CONTACT' ) ) );
         ?>"><img src="<?php
           echo get_template_directory_uri() . '/images/contact_mail.png';
-        ?>" alt="mail" /></a></li>
-        <li><a href="#"><img src="<?php
+        ?>" alt="mail" class="sns-icon" /></a></li>
+        <li><a href="https://twitter.com/salvageparty" target="_blank"><img src="<?php
           echo get_template_directory_uri() . '/images/contact_twitter.png';
-        ?>" alt="twitter" /></a></li>
-        <li><a href="#"><img src="<?php
+        ?>" alt="twitter" class="sns-icon" /></a></li>
+        <li><a href="https://www.facebook.com/salvage.party/" target="_blank"><img src="<?php
           echo get_template_directory_uri() . '/images/contact_facebook.png';
-        ?>" alt="facebook" /></a></li>
+        ?>" alt="facebook" class="sns-icon" /></a></li>
       </ul>
     </header>
