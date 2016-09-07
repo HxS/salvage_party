@@ -1,0 +1,94 @@
+// schedule.php用
+
+.mainContent--schedule {
+  h1 {
+    font-size: 28px;
+    font-weight: normal;
+  }
+  .schedule {
+    &ItemList {
+      padding: 0;
+      margin-bottom: 30px;
+      list-style: none;
+    }
+    &Item {
+      @include clearfix;
+      overflow: hidden;
+      height: 260px;
+      background-color: $light-gray-color;
+      .wrapper {
+        @include outer-container;
+      }
+      &__thumbnail {
+        height: 260px;
+        width: 260px;
+        float: left;
+        background-size: cover;
+        background-color: $middle-gray-color;
+        box-sizing: border-box;
+        padding: 0;
+        vertical-align: bottom;
+        position: relative;
+      }
+      &__contents {
+        height: 280px;
+        width: 420px;
+        float: left;
+        padding: 20px;
+        box-sizing: content-box;
+
+      }
+      &__outline {
+        @include span-columns(9);
+      }
+
+      .scheduleOutline {
+        &__date {
+          font-size: 16px;
+        }
+        &__weekday {
+          font-size: 14px;
+        }
+        &__region {
+          font-size: 10px;
+          background: #FF9079;
+          padding: 2px 5px;
+        }
+        &__title {
+          font-size: 16px;
+        }
+        &__location {
+          font-size: 12px;
+        }
+      }
+      &__ambassador {
+        @include span-columns(3);
+        height: 97.56px;
+        background-size: cover;
+        background-color: $middle-gray-color;
+        box-sizing: border-box;
+        padding: 0;
+        vertical-align: bottom;
+        position: relative;
+        border-radius: 1000px;
+      }
+      &__description {
+        font-size: 12px;
+      }
+      &__update {
+        @include span-columns(6);
+      }
+      &__join {
+        @include span-columns(6);
+        text-align: center;
+        background-color: $navy-color;
+        text-decoration: none;
+        font-size: 14px;
+        margin-top: 5px;
+        padding: 7px 0;
+        margin-bottom: 40px;
+        color: white;
+      }
+    }
+  }
+}

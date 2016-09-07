@@ -14,7 +14,7 @@
   <body>
     <header class="pageHeader">
       <h1 class="pageHeader__logo">
-        <a href="#"><img src="<?php
+        <a href="<?php echo esc_url( get_home_url() ); ?>"><img src="<?php
           echo get_template_directory_uri() . '/images/header_logo.png';
         ?>" alt="Salvage Party" /></a>
       </h1>
