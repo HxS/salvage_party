@@ -6,7 +6,7 @@ Template Name: TOPIC DETAIL
 get_header(); ?>
 
 
-<div class="mainContent mainContent--action">
+<div class="mainContent mainContent--topicDetail">
   <?php
     global $more;
     if(have_posts()) :
@@ -37,7 +37,18 @@ get_header(); ?>
 
     <article class="mainContent__article">
       <!-- ここから -->
+      <h3 class="contentHeader__articleTitle">トピック名</h3>
+      <img class="topicDetail__image" src="<?php
+             echo get_template_directory_uri() . '/images/mock_recipe.png';
+            ?>">
+      <div class="topicDetail__info">
+        <p>ダミーの段落 トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介トピックの紹介</p>
+      </div>
 
+      <div class="articleShareButtons">
+        <button>FACEBOOK でシェア</button>
+        <button>TWITTER でシェア</button>
+      </div>
       <!-- ここまで -->
       <?php the_content(); ?>
     </article>

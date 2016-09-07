@@ -7,3 +7,184 @@ Description: Wordpress Theme for Salvage Party
 Text Domain: salvageparty
 Version: 1.0.0
 */
+
+/* Template ACTION */
+
+.mainContent--action ul {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+.mainContent--action li {
+  display: inline-block;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  width: 45%;
+  margin: 0 20px 30px 0;
+}
+
+.mainContent--action li img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* こっから下 mucho613 編集分 ------------------------------- */
+
+.contentHeader__articleTitle {
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0 0 42px 0;
+}
+
+ul.pagination {
+  list-style: none;
+}
+ul.pagination li {
+  display: inline;
+  font-size: 12pt;
+}
+ul.pagination li:not(last-child)::after {
+  content: " | ";
+}
+
+.mainContent--chef .chefList {
+  overflow-y: hidden;
+  height: 240px; }
+  .mainContent--chef .chefList::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .mainContent--chef .chefList__title {
+    float: left;
+    font-weight: normal;
+    height: 169px;
+    width: 169px;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    /* Safari */
+    justify-content: center; }
+    .mainContent--chef .chefList__title small {
+      display: inline;
+      font-size: 10px; }
+      .mainContent--chef .chefList__title small a {
+        color: #EF8A76;
+        text-decoration: none; }
+  .mainContent--chef .chefListItem {
+    float: left;
+    margin-right: 20px; }
+    .mainContent--chef .chefListItem a {
+      text-decoration: none;
+      color: #000000; }
+    .mainContent--chef .chefListItem__thumbnail {
+      margin-bottom: 10px; }
+  .mainContent--chef .chefList .scroll {
+    float: left;
+    width: 890px;
+    overflow-x: scroll; }
+  .mainContent--chef .chefList__list {
+    list-style: none;
+    height: 500px;
+    padding-left: 0; }
+  .mainContent--chef .chefList__list {
+    width: 756px; }
+  .mainContent--chef .chefListItem {
+    margin-bottom: 42px;
+    width: 169px;
+    text-align: center; }
+    .mainContent--chef .chefListItem__thumbnail {
+      width: 169px;
+      height: 169px;
+      border-radius: 1000px; }
+
+
+.mainContent--chefDetail .chefDetail__image {
+  width: 100%;
+}
+.mainContent--chefDetail .chefDetail__info {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+}
+
+
+.mainContent--topicDetail .topicDetail__image {
+  width: 100%;
+}
+.mainContent--topicDetail .topicDetail__info {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+}
+
+
+.articleShareButtons {
+  margin: 21px 0 0 0;
+}
+.articleShareButtons button{
+  background-color: rgb(17, 84, 112);
+  color: #FAFAFA;
+  width: 49%;
+  height: 60px;
+  text-align: center;
+  font-size: 14pt;
+  border: 0px;
+}
+.articleShareButtons button:first-child{
+  float: left;
+}
+.articleShareButtons button:last-child{
+  float: right;
+}
+
+
+.mainContent--topic .topicList__list{
+  list-style: none;
+  padding: 0;
+}
+.mainContent--topic .topicList__item{
+  display: block;
+  float: left;
+  width: 48%;
+  margin: 0 14px 32px 0;
+}
+.mainContent--topic .topicList__item a{
+  text-decoration: none;
+  color: #010101;
+}
+.mainContent--topic .topicList__item .topicListItem__thumbnail{
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+}
+.topicListItem__description{
+  margin: 10px 0 0 0;
+}
+.topicListItem__description time{
+  font-size: 10pt;
+  display: block;
+  color: #5a5a5a;
+}
+.topicListItem__description title{
+  font-size: 15pt;
+  display: block;
+}
+.topicListItem__description small{
+  font-size: 8pt;
+  display: block;
+  color: #6e6e6e;
+}
+.topicListItem__thumbnail-tag {
+  height: 20px;
+  display: inline;
+  position: relative;
+  left: 0;
+  top: 20px;
+  background-color: #EE2424;
+  opacity: 70%;
+}

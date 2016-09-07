@@ -43,7 +43,9 @@
       </nav>
 
       <ul class="pageHeader__contactList">
-        <li><a href="#"><img src="<?php
+        <li><a href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'CONTACT' ) ) );
+        ?>"><img src="<?php
           echo get_template_directory_uri() . '/images/contact_mail.png';
         ?>" alt="mail" /></a></li>
         <li><a href="#"><img src="<?php
