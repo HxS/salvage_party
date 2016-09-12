@@ -106,3 +106,43 @@ function breadcrumb(){
   }
   echo $str;
 }
+
+
+// トップページのyoutubeのID指定
+add_action('admin_menu', 'top_movie_create_menu');
+function register_mysettings() {
+	//register our settings
+	register_setting( 'top-movie-settings-group', 'youtube-id' );
+}
+
+function top_movie_settings_page() {
+?>
+<div class="wrap">
+<h2>Webサイトトップの動画ID</h2>
+
+<form method="post" action="options.php">
+    <?php settings_fields( 'top-movie-settings-group' ); ?>
+    <?php do_settings_sections( 'top-movie-settings-group' ); ?>
+    <table class="form-table">
+        <tr valign="top">
+        <th scope="row">Youtube ID(https://www.youtube.com/watch?v=xxxxxxx の xxxxxxx にあたる部分)</th>
+        <td><input type="text" name="youtube-id" value="<?php echo esc_attr( get_option('youtube-id') ); ?>" /></td>
+        </tr>
+    </table>
+
+    <?php submit_button(); ?>
+
+    <iframe id="ytplayer" type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/<?php echo esc_attr( get_option('youtube-id') ); ?>"
+  frameborder="0"/>
+
+</form>
+</div>
+<?php }
+
+function top_movie_create_menu() {
+	//create new top-level menu
+	add_menu_page('Top Page Youtube ID Settings', 'トップページのYoutube動画ID', 'administrator', __FILE__, 'top_movie_settings_page', '');
+	//call register settings function
+	add_action( 'admin_init', 'register_mysettings' );
+}

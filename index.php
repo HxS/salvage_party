@@ -257,9 +257,9 @@
         'showinfo': 0,
         'autohide': 1,
         'loop': 1,
-        'playlist': 'n4JFXi9lOJ8',
+        'playlist': '<?php echo esc_attr( get_option('youtube-id') ); ?>',
         'wmode':'opaque' },
-      videoId: 'n4JFXi9lOJ8',
+      videoId: '<?php echo esc_attr( get_option('youtube-id') ); ?>',
       events: {
         'onReady': onPlayerReady}
     });
