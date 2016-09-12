@@ -3,11 +3,9 @@
 <div id='index' class="index">
 
   <div class='index__movie'>
-    <div id="player"></div>
-    <div class="eyecatch">
-      <p class='catch'>
-        もてあましている食材に、最高のスポットライトを。
-      </p>
+    <div class="index__movieWrapper">
+      <div id="player"></div>
+      <div class="eyecatch"></div>
     </div>
   </div>
 

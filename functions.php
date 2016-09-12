@@ -1,5 +1,36 @@
 <?php
 
+// 以前のサイトのCPT UIからインポート
+add_action( 'init', 'cptui_register_my_cpts_news' );
+function cptui_register_my_cpts_news() {
+  $labels = array(
+    "name" => __( 'NEWS', 'salvageparty' ),
+    "singular_name" => __( 'news', 'salvageparty' ),
+  );
+
+  $args = array(
+    "label" => __( 'NEWS', 'salvageparty' ),
+    "labels" => $labels,
+    "description" => "",
+    "public" => true,
+    "publicly_queryable" => true,
+    "show_ui" => true,
+    "show_in_rest" => false,
+    "rest_base" => "",
+    "has_archive" => false,
+    "show_in_menu" => true,
+  	"exclude_from_search" => false,
+    "capability_type" => "post",
+    "map_meta_cap" => true,
+    "hierarchical" => false,
+    "rewrite" => array( "slug" => "news", "with_front" => true ),
+    "query_var" => true,
+    "supports" => array( "title", "custom-fields", "post-formats" ),
+  );
+  register_post_type( "news", $args );
+}
+// End of cptui_register_my_cpts_news()
+
 // パンくずリスト
 // usage: 引数なし
 function breadcrumb(){

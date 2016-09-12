@@ -3,32 +3,29 @@
 
 .index {
   &__movie {
+    $movie-height: 700px;
+    height: $movie-height;
+    overflow: hidden;
     position: relative;
-    width: 100%;
-    padding: 56.25% 0 0 0;
-    #player {
-      position: absolute;
-      top: 0;
-      left: 0;
+    padding-top: $movie-height / 2;
+    min-width: $content-width;
+    &Wrapper {
+      position: relative;
       width: 100%;
-      height: 100%;
-    }
-    .eyecatch {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255,255,255,0.3);
-      .catch {
+      padding: 56.25% 0 0 0;
+      #player {
         position: absolute;
-        text-align: center;
-        top: 50%;
+        top: -50%;
         left: 0;
         width: 100%;
-        margin-top: -20px;
-        font-size: 28px;
-        font-family: $font-serif;
+        height: 100%;
+      }
+      .eyecatch {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
     }
   }
