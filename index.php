@@ -11,28 +11,36 @@
 
   <ul class="index__banners">
     <li>
-      <a href="#">
+      <a href="<?php
+        echo esc_url( get_permalink( get_page_by_title( 'パーティに参加する' ) ) );
+      ?>">
         <img src="<?php
           echo get_template_directory_uri() . '/images/banner_join.png';
         ?>" alt="" />
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="<?php
+        echo esc_url( get_permalink( get_page_by_title( 'パーティを開く' ) ) );
+      ?>">
         <img src="<?php
           echo get_template_directory_uri() . '/images/banner_enjoy.png';
         ?>" alt="" />
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="<?php
+        echo esc_url( get_permalink( get_page_by_title( '資格をとる' ) ) );
+      ?>">
         <img src="<?php
           echo get_template_directory_uri() . '/images/banner_promotion.png';
         ?>" alt="" />
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="<?php
+        echo esc_url( get_permalink( get_page_by_title( '企業として参加する' ) ) );
+      ?>">
         <img src="<?php
           echo get_template_directory_uri() . '/images/banner_organization.png';
         ?>" alt="" />
