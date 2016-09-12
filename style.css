@@ -10,13 +10,13 @@ Version: 1.0.0
 
 /* Template ACTION */
 
-.mainContent--action ul {
+.mainContent--action article ul {
   list-style: none;
   padding: 0;
   position: relative;
 }
 
-.mainContent--action li {
+.mainContent--action article li {
   display: inline-block;
   box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -25,12 +25,22 @@ Version: 1.0.0
   margin: 0 20px 30px 0;
 }
 
-.mainContent--action li img {
+.mainContent--action article  li img {
   width: 100%;
   border-radius: 10px;
 }
 
-/* こっから下 mucho613 編集分 ------------------------------- */
+/*
+Theme Name: Salvage Party
+Theme URI: http://salvage-party.com
+Author: HxS
+Author URI: http://hxs.jp
+Description: Wordpress Theme for Salvage Party
+Text Domain: salvageparty
+Version: 1.0.0
+*/
+
+/* Template ACTION */
 
 .contentHeader__articleTitle {
   font-size: 30px;
@@ -45,7 +55,7 @@ ul.pagination li {
   display: inline;
   font-size: 12pt;
 }
-ul.pagination li:not(last-child)::after {
+ul.pagination li:not(:last-child)::after {
   content: " | ";
 }
 
@@ -180,13 +190,26 @@ ul.pagination li:not(last-child)::after {
   color: #6e6e6e;
 }
 .topicListItem__thumbnail-tag {
+  width: auto;
   height: 20px;
   display: inline;
   position: relative;
+  padding: 2px 14px 2px 14px;
   left: 0;
-  top: 20px;
-  background-color: #EE2424;
-  opacity: 70%;
+  top: 16px;
+  background-color: #666;
+  color: #efefef;
+  font-size: 8pt;
+  font-weight: bold;
+}
+
+.topicListItem__topic .topicListItem__thumbnail-tag {
+  background-color: #666;
+  color: #efefef;
+}
+.topicListItem__event .topicListItem__thumbnail-tag {
+  background-color: #ff9079;
+  color: #efefef;
 }
 
 /**
