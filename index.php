@@ -55,25 +55,39 @@
       </h2>
     </header>
     <div class="pickUp__lists">
-      <?php for($i=0;$i<2;$i++) { ?>
-        <ul class="pickUpItemList">
-          <?php for($j=0;$j<3;$j++) { ?>
-            <li class="pickUpItemList__item pickUpItem">
-              <a href="#">
-                <div class='pickUpItem__thumbnail' style="background-image: url('<?php
-                  echo get_template_directory_uri() . '/images/mock_event.png';
-                ?>')" /><span class='pickUpItem__date'>2016.06.01</span></div>
-                <div class="pickUpItem__description">
-                  <span class="pickUpItem__tag--event">EVENT</span>
-                  <p class="pickUpItem__title">
-                    3/21サルベージ・パーティvol.4開催のお知らせ @ 新宿御苑
-                  </p>
-                </div>
-              </a>
-            </li>
-          <?php } ?>
-        </ul>
-      <?php } ?>
+
+      <ul class="pickUpItemList">
+        <?php
+        $while_count = 0;
+        $args = array( 'post_type' => 'topic', 'posts_per_page' => 6 );
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post();
+          $while_count++
+        ?>
+          <li class="pickUpItemList__item pickUpItem">
+            <a href="#">
+              <div class='pickUpItem__thumbnail' style="background-image: url('<?php
+                echo the_post_thumbnail_url();
+              ?>')" /><span class='pickUpItem__date'><?php the_time('Y.m.d'); ?></span></div>
+              <div class="pickUpItem__description">
+                <span class="pickUpItem__tag--<?php
+                  echo strtolower(get_post_meta( get_the_ID(), 'topic_tag', true ));
+                ?>"><?php
+                  echo get_post_meta( get_the_ID(), 'topic_tag', true );
+                ?></span>
+                <p class="pickUpItem__title">
+                  <?php the_title(); ?>
+                </p>
+              </div>
+            </a>
+          </li>
+          <?php if($while_count == 3) : ?>
+            </ul>
+            <ul class="pickUpItemList">
+          <?php endif; ?>
+        <?php
+        endwhile; ?>
+      </ul>
     </div>
     <a class="pickUp__moreButton" href="#">More</a>
   </div>
@@ -85,22 +99,30 @@
       </h2>
     </header>
     <div class="report__lists">
-      <?php for($i=0;$i<2;$i++) { ?>
         <ul class="reportItemList">
-          <?php for($j=0;$j<4;$j++) { ?>
+          <?php
+          $while_count = 0;
+          $args = array( 'post_type' => 'report', 'posts_per_page' => 8 );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++
+          ?>
             <li class="reportItemList__item reportItem">
               <a href="#">
                 <div class='reportItem__thumbnail' style="background-image: url('<?php
-                  echo get_template_directory_uri() . '/images/mock_report.png';
-                ?>')" /><span class='reportItem__date'>06.01</span></div>
+                  echo the_post_thumbnail_url();
+                ?>')" /><span class='reportItem__date'><?php the_time('m.d'); ?></span></div>
                 <p class="reportItem__description">
-                  3/21サルベージ・パーティvol.4開催のお知らせ @ 新宿御苑
+                  <?php the_title(); ?>
                 </p>
               </a>
             </li>
-          <?php } ?>
+            <?php if($while_count == 4) : ?>
+              </ul>
+              <ul class="reportItemList">
+            <?php endif; ?>
+          <?php endwhile; ?>
         </ul>
-      <?php } ?>
     </div>
     <a class="report__moreButton" href="#">More</a>
   </div>
@@ -112,40 +134,57 @@
         Interview & Column
       </h2>
       <h2 class="indexTitles__title indexTitles__title--right">
-        Interview
+        Information
       </h2>
     </header>
 
     <div class="interview__lists interviewLists">
       <div class="interviewLists--feature">
-        <?php for($i=0;$i<2;$i++) { ?>
-          <ul class="interviewItemList">
-            <?php for($j=0;$j<2;$j++) { ?>
-              <li class="interviewItemList__item interviewFeature">
-                <a href="#">
-                  <div class='interviewFeature__thumbnail' style="background-image: url('<?php
-                    echo get_template_directory_uri() . '/images/mock_feature' . ($i * 2 + $j + 1) . '.png';
-                  ?>')" /></div>
-                </a>
-              </li>
-            <?php } ?>
-          </ul>
-        <?php } ?>
+        <ul class="interviewItemList">
+          <?php
+          $while_count = 0;
+          $args = array( 'post_type' => 'interview', 'posts_per_page' => 4 );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++
+          ?>
+            <li class="interviewItemList__item interviewFeature">
+              <a href="#">
+                <div class='interviewFeature__thumbnail' style="background-image: url('<?php
+                  echo the_post_thumbnail_url();
+                ?>')" /></div>
+              </a>
+            </li>
+            <?php if($while_count == 2) : ?>
+              </ul>
+              <ul class="interviewItemList">
+            <?php endif; ?>
+          <?php endwhile; ?>
+        </ul>
         <a class="interview__moreButton" href="#">More</a>
       </div>
 
       <ul class="interviewLists--newest">
-        <?php for($i=0;$i<5;$i++) { ?>
+        <?php
+        $while_count = 0;
+        $args = array( 'post_type' => 'information', 'posts_per_page' => 5 );
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post();
+          $while_count++
+        ?>
           <li class="interviewItemList__item interviewNewest">
             <a href="#">
-              <div class="interviewNewest__date">2016.02.14</div>
+              <div class="interviewNewest__date"><?php the_time('Y.m.d'); ?></div>
               <div class="interviewNewest__title">
-                2/15 テレビ東京「TOKYOガルリ」に取り上げていただきます。
+                <?php the_title(); ?>
               </div>
-              <div class="interviewNewest__tag">MEDIA</div>
+              <div class="interviewNewest__tag"><?php
+                $term_list = wp_get_post_terms($post->ID, 'information_tag', array("fields" => "names"));
+                echo $term_list[0];
+              ?></div>
             </a>
           </li>
-        <?php } ?>
+        <?php endwhile; ?>
       </ul>
 
     </div>
@@ -162,17 +201,24 @@
         <small>サルベージ・クッキング</small>
       </h3>
       <div class="scroll">
-        <ul class="movieList__list">
-          <?php for($j=0;$j<10;$j++) { ?>
+        <ul class="movieList__list" style="width: <?php echo 254 * $content_count; ?>px">
+          <?php
+          $while_count = 0;
+          $args = array( 'post_type' => 'cooking', 'posts_per_page' => 10 );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++
+          ?>
             <li class="movieList__item movieListItem">
               <a href="#">
-                <div class='movieListItem__thumbnail' style="background-image: url('<?php
-                  echo get_template_directory_uri() . '/images/mock_cooking.png';
-                ?>')" /></div>
-                動画タイトル
+                <div class='movieListItem__thumbnail'
+                  style="background-image: url('http://i.ytimg.com/vi/<?php
+                  echo get_post_meta( get_the_ID(), 'movie_id', true );
+                ?>/mqdefault.jpg')" /></div>
+                <?php the_title(); ?>
               </a>
             </li>
-          <?php } ?>
+          <?php endwhile; ?>
         </ul>
       </div>
     </div>
@@ -187,17 +233,23 @@
         </small>
       </h3>
       <div class="scroll">
-        <ul class="recipeList__list">
-          <?php for($j=0;$j<10;$j++) { ?>
+        <ul class="recipeList__list" style="width: <?php echo 254 * $content_count; ?>px">
+          <?php
+          $while_count = 0;
+          $args = array( 'post_type' => 'recipe', 'posts_per_page' => 10 );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++
+          ?>
             <li class="recipeList__item recipeListItem">
               <a href="#">
                 <div class='recipeListItem__thumbnail' style="background-image: url('<?php
-                  echo get_template_directory_uri() . '/images/mock_recipe.png';
+                  echo the_post_thumbnail_url();
                 ?>')" /></div>
-                レシピ
+                <?php the_title(); ?>
               </a>
             </li>
-          <?php } ?>
+          <?php endwhile; ?>
         </ul>
       </div>
     </div>
@@ -212,17 +264,26 @@
         </small>
       </h3>
       <div class="scroll">
-        <ul class="chefList__list">
-          <?php for($j=0;$j<10;$j++) { ?>
+        <?php
+          $while_count = 0;
+          $args = array( 'post_type' => 'chef', 'posts_per_page' => 10);
+          $loop = new WP_Query( $args );
+          $content_count = $loop->post_count < 10 ? $loop->post_count : 10;
+        ?>
+        <ul class="chefList__list" style="width: <?php echo 194 * $content_count; ?>px">
+          <?php
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++
+          ?>
             <li class="chefList__item chefListItem">
               <a href="#">
                 <div class='chefListItem__thumbnail' style="background-image: url('<?php
-                  echo get_template_directory_uri() . '/images/mock_chef.png';
+                  echo the_post_thumbnail_url();
                 ?>')" /></div>
-                シェフの名前
+                <?php the_title(); ?>
               </a>
             </li>
-          <?php } ?>
+          <?php endwhile; ?>
         </ul>
       </div>
     </div>

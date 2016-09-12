@@ -96,9 +96,18 @@
 
       &__tag {
         font-size: 10px;
+        padding: 2px 5px;
         &--event {
           background: #FF9079;
           padding: 2px 5px;
+        }
+        &--party {
+          background: #0E526E;
+          padding: 2px 5px;
+        }
+        &--class {
+          background: #FCCF00;
+          padding: 2px 8px;
         }
       }
 
