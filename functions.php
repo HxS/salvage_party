@@ -117,3 +117,89 @@ function top_movie_create_menu() {
 	//call register settings function
 	add_action( 'admin_init', 'register_mysettings' );
 }
+
+function add_my_box() {
+  add_meta_box('ambassador_info', '情報', 'ambassador_info_form', 'schedule', 'normal', 'high');
+}
+add_action('add_meta_boxes', 'add_my_box');
+
+function ambassador_info_form() {
+  global $post;
+  wp_nonce_field(wp_create_nonce(__FILE__), 'my_nonce');
+?>
+  <div id="ambassador_info">
+  <p>アンバサダーを選択してください。</p>
+  <label>アンバサダー名</label>
+  <select name="ambassador_id">
+    <option name='0'>指定なし</option>
+    <?php
+    $current_id = get_post_meta( $post->ID, 'ambassador_id', true );
+    $args = array( 'post_type' => 'ambassador');
+    $loop = new WP_Query( $args );
+    while ( $loop->have_posts() ) :
+      $loop->the_post();
+      $ambassador_id = get_the_ID();
+      echo '<option value=' . $ambassador_id;
+      if ( $ambassador_id == $current_id ):
+        echo ' selected';
+      endif;
+      echo '>' . get_the_title() . '</option>';
+    endwhile; ?>
+  </select>
+  </div>
+<?php
+}
+
+function my_box_save($post_id) {
+  global $post;
+  $my_nonce = isset($_POST['my_nonce']) ? $_POST['my_nonce'] : null;
+  if(!wp_verify_nonce($my_nonce, wp_create_nonce(__FILE__))) {
+    return $post_id;
+  }
+  if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) { return $post_id; }
+  if(!current_user_can('edit_post', $post->ID)) { return $post_id; }
+  if($_POST['post_type'] == 'schedule'){
+    update_post_meta($post->ID, 'ambassador_id', $_POST['ambassador_id']);
+  }
+}
+add_action('save_post', 'my_box_save');
+
+//Pagenation
+function pagination($pages = '', $range = 2)
+{
+     $showitems = ($range * 2)+1;//表示するページ数（５ページを表示）
+
+     global $paged;//現在のページ値
+     if(empty($paged)) $paged = 1;//デフォルトのページ
+
+     if($pages == '')
+     {
+         global $wp_query;
+         $pages = $wp_query->max_num_pages;//全ページ数を取得
+         if(!$pages)//全ページ数が空の場合は、１とする
+         {
+             $pages = 1;
+         }
+     }
+
+     if(1 != $pages)//全ページが１でない場合はページネーションを表示する
+     {
+		 echo "<div class=\"pagenation\">\n";
+		 echo "<ul>\n";
+		 //Prev：現在のページ値が１より大きい場合は表示
+         if($paged > 1) echo "<li class=\"prev\"><a href='".get_pagenum_link($paged - 1)."'>Prev</a></li>\n";
+
+         for ($i=1; $i <= $pages; $i++)
+         {
+             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+             {
+                //三項演算子での条件分岐
+                echo ($paged == $i)? "<li class=\"active\">".$i."</li>\n":"<li><a href='".get_pagenum_link($i)."'>".$i."</a></li>\n";
+             }
+         }
+		//Next：総ページ数より現在のページ値が小さい場合は表示
+		if ($paged < $pages) echo "<li class=\"next\"><a href=\"".get_pagenum_link($paged + 1)."\">Next</a></li>\n";
+		echo "</ul>\n";
+		echo "</div>\n";
+     }
+}

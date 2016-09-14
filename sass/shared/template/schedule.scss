@@ -16,6 +16,7 @@
       overflow: hidden;
       height: 260px;
       background-color: $light-gray-color;
+      margin-bottom: 30px;
       .wrapper {
         @include outer-container;
       }
