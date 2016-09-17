@@ -65,7 +65,7 @@
           $while_count++
         ?>
           <li class="pickUpItemList__item pickUpItem">
-            <a href="#">
+            <a href="<?php echo post_permalink($post->ID); ?>">
               <div class='pickUpItem__thumbnail' style="background-image: url('<?php
                 echo the_post_thumbnail_url();
               ?>')" /><span class='pickUpItem__date'><?php the_time('Y.m.d'); ?></span></div>
@@ -108,7 +108,7 @@
             $while_count++
           ?>
             <li class="reportItemList__item reportItem">
-              <a href="#">
+              <a href="<?php echo post_permalink($post->ID); ?>">
                 <div class='reportItem__thumbnail' style="background-image: url('<?php
                   echo the_post_thumbnail_url();
                 ?>')" /><span class='reportItem__date'><?php the_time('m.d'); ?></span></div>
@@ -149,7 +149,7 @@
             $while_count++
           ?>
             <li class="interviewItemList__item interviewFeature">
-              <a href="#">
+              <a href="<?php echo post_permalink($post->ID); ?>">
                 <div class='interviewFeature__thumbnail' style="background-image: url('<?php
                   echo the_post_thumbnail_url();
                 ?>')" /></div>
@@ -173,7 +173,7 @@
           $while_count++
         ?>
           <li class="interviewItemList__item interviewNewest">
-            <a href="#">
+            <a href="<?php echo post_permalink($post->ID); ?>">
               <div class="interviewNewest__date"><?php the_time('Y.m.d'); ?></div>
               <div class="interviewNewest__title">
                 <?php the_title(); ?>
@@ -210,7 +210,7 @@
             $while_count++
           ?>
             <li class="movieList__item movieListItem">
-              <a href="#">
+              <a href="<?php echo post_permalink($post->ID); ?>">
                 <div class='movieListItem__thumbnail'
                   style="background-image: url('http://i.ytimg.com/vi/<?php
                   echo get_post_meta( get_the_ID(), 'movie_id', true );
@@ -242,7 +242,7 @@
             $while_count++
           ?>
             <li class="recipeList__item recipeListItem">
-              <a href="#">
+              <a href="<?php echo post_permalink($post->ID); ?>">
                 <div class='recipeListItem__thumbnail' style="background-image: url('<?php
                   echo the_post_thumbnail_url();
                 ?>')" /></div>
@@ -276,7 +276,7 @@
             $while_count++
           ?>
             <li class="chefList__item chefListItem">
-              <a href="#">
+              <a href="<?php echo post_permalink($post->ID); ?>">
                 <div class='chefListItem__thumbnail' style="background-image: url('<?php
                   echo the_post_thumbnail_url();
                 ?>')" /></div>

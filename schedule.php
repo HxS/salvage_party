@@ -9,6 +9,8 @@ get_header(); ?>
 <div class="mainContent mainContent--schedule">
   <?php
     global $more;
+    global $page_post;
+    $page_post = $post;
     if(have_posts()) :
       while(have_posts()) :
         $more = 1;
@@ -47,6 +49,7 @@ get_header(); ?>
         );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();
+          $ambassador_id = get_post_meta($post->ID, "ambassador_id", true);
         ?>
           <li class="scheduleItemList__item scheduleItem">
             <div class='scheduleItem__thumbnail' style="background-image: url('<?php
@@ -73,7 +76,10 @@ get_header(); ?>
                     @ <?php echo get_post_meta($post->ID, 'location', true); ?>
                   </span>
                 </div>
-                <div class='scheduleItem__ambassador' /></div>
+                <div class='scheduleItem__ambassador' style="background-image: url('<?php
+                  $ambassador_icon = wp_get_attachment_image_src(get_post_thumbnail_id($ambassador_id))[0];
+                  echo $ambassador_icon;
+                ?>')"></div>
               </div>
               <p class="scheduleItem__description">
                 <?php
@@ -89,7 +95,7 @@ get_header(); ?>
                 <p class="scheduleItem__update">
                   更新日 : <?php the_modified_date('Y/m/d') ?>
                 </p>
-                <a class="scheduleItem__join" href='#'>
+                <a class="scheduleItem__join" href='<?php echo post_permalink($post->ID); ?>'>
                   参加する
                 </a>
               </div>
@@ -107,6 +113,8 @@ get_header(); ?>
         'current' => max( 1, get_query_var('paged') ),
         'total' => $loop->max_num_pages
       ) );
+
+      $post = $page_post;
       ?>
       <!-- ここまで -->
     </article>
