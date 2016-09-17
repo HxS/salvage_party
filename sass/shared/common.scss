@@ -4,6 +4,11 @@ html, body {
   padding: 0;
 }
 
+* {
+  background-size: cover;
+  background-position: center center;
+}
+
 ul {
   list-style: none;
 }
@@ -20,4 +25,12 @@ img {
 
 .clearfix {
   @include clearfix;
+}
+
+a {
+  transition: opacity 0.2s linear;
+  background: white;
+  &:hover {
+    opacity: 0.5;
+  }
 }

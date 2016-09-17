@@ -1,35 +1,6 @@
 <?php
+add_theme_support('post-thumbnails');
 
-// 以前のサイトのCPT UIからインポート
-add_action( 'init', 'cptui_register_my_cpts_news' );
-function cptui_register_my_cpts_news() {
-  $labels = array(
-    "name" => __( 'NEWS', 'salvageparty' ),
-    "singular_name" => __( 'news', 'salvageparty' ),
-  );
-
-  $args = array(
-    "label" => __( 'NEWS', 'salvageparty' ),
-    "labels" => $labels,
-    "description" => "",
-    "public" => true,
-    "publicly_queryable" => true,
-    "show_ui" => true,
-    "show_in_rest" => false,
-    "rest_base" => "",
-    "has_archive" => false,
-    "show_in_menu" => true,
-  	"exclude_from_search" => false,
-    "capability_type" => "post",
-    "map_meta_cap" => true,
-    "hierarchical" => false,
-    "rewrite" => array( "slug" => "news", "with_front" => true ),
-    "query_var" => true,
-    "supports" => array( "title", "custom-fields", "post-formats" ),
-  );
-  register_post_type( "news", $args );
-}
-// End of cptui_register_my_cpts_news()
 
 // パンくずリスト
 // usage: 引数なし
@@ -106,3 +77,89 @@ function breadcrumb(){
   }
   echo $str;
 }
+
+
+// トップページのyoutubeのID指定
+add_action('admin_menu', 'top_movie_create_menu');
+function register_mysettings() {
+  //register our settings
+  register_setting( 'top-movie-settings-group', 'youtube-id' );
+}
+
+function top_movie_settings_page() {
+?>
+<div class="wrap">
+<h2>Webサイトトップの動画ID</h2>
+
+<form method="post" action="options.php">
+    <?php settings_fields( 'top-movie-settings-group' ); ?>
+    <?php do_settings_sections( 'top-movie-settings-group' ); ?>
+    <table class="form-table">
+        <tr valign="top">
+        <th scope="row">Youtube ID(https://www.youtube.com/watch?v=xxxxxxx の xxxxxxx にあたる部分)</th>
+        <td><input type="text" name="youtube-id" value="<?php echo esc_attr( get_option('youtube-id') ); ?>" /></td>
+        </tr>
+    </table>
+
+    <?php submit_button(); ?>
+
+    <iframe id="ytplayer" type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/<?php echo esc_attr( get_option('youtube-id') ); ?>"
+  frameborder="0"/>
+
+</form>
+</div>
+<?php }
+
+function top_movie_create_menu() {
+  //create new top-level menu
+  add_menu_page('Top Page Youtube ID Settings', 'トップページのYoutube動画ID', 'administrator', __FILE__, 'top_movie_settings_page', '');
+  //call register settings function
+  add_action( 'admin_init', 'register_mysettings' );
+}
+
+function add_my_box() {
+  add_meta_box('ambassador_info', '情報', 'ambassador_info_form', 'schedule', 'normal', 'high');
+}
+add_action('add_meta_boxes', 'add_my_box');
+
+function ambassador_info_form() {
+  global $post;
+  wp_nonce_field(wp_create_nonce(__FILE__), 'my_nonce');
+?>
+  <div id="ambassador_info">
+  <p>アンバサダーを選択してください。</p>
+  <label>アンバサダー名</label>
+  <select name="ambassador_id">
+    <option name='0'>指定なし</option>
+    <?php
+    $current_id = get_post_meta( $post->ID, 'ambassador_id', true );
+    $args = array( 'post_type' => 'ambassador');
+    $loop = new WP_Query( $args );
+    while ( $loop->have_posts() ) :
+      $loop->the_post();
+      $ambassador_id = get_the_ID();
+      echo '<option value=' . $ambassador_id;
+      if ( $ambassador_id == $current_id ):
+        echo ' selected';
+      endif;
+      echo '>' . get_the_title() . '</option>';
+    endwhile; ?>
+  </select>
+  </div>
+<?php
+}
+
+function my_box_save($post_id) {
+  global $post;
+  $my_nonce = isset($_POST['my_nonce']) ? $_POST['my_nonce'] : null;
+  if(!wp_verify_nonce($my_nonce, wp_create_nonce(__FILE__))) {
+    return $post_id;
+  }
+  if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) { return $post_id; }
+  if(!current_user_can('edit_post', $post->ID)) { return $post_id; }
+  if($_POST['post_type'] == 'schedule'){
+    update_post_meta($post->ID, 'ambassador_id', $_POST['ambassador_id']);
+  }
+}
+add_action('save_post', 'my_box_save');

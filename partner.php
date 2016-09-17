@@ -9,6 +9,8 @@ get_header(); ?>
 <div class="mainContent mainContent--partner">
   <?php
     global $more;
+    global $page_post;
+    $page_post = $post;
     if(have_posts()) :
       while(have_posts()) :
         $more = 1;
@@ -18,9 +20,6 @@ get_header(); ?>
           <h2 class="contentHeader__title">
             <?php the_title(); ?>
           </h2>
-          <p class="contentHeader__subTitle">
-            サブタイトルを表示
-          </p>
           <?php breadcrumb(); ?>
         </header>
 
@@ -39,34 +38,73 @@ get_header(); ?>
       <?php the_content(); ?>
       <!-- ここから -->
       <h1>パートナー</h1>
-      <?php for($i=0;$i<2;$i++) { ?>
-        <ul class="partnerItemList">
-          <?php for($j=0;$j<3;$j++) { ?>
-            <li class="partnerItemList__item partnerItem">
-              <a href="#">
-                <div class='partnerItem__thumbnail' /></div>
-                企業名
-              </a>
-            </li>
-          <?php } ?>
-        </ul>
-      <?php } ?>
+      <ul class="partnerItemList">
+        <?php
+          $args = array(
+            'post_type' => 'partner',
+            'meta_query' => array(
+              array(
+                'key'     => 'partner_type',
+                'value'   => 'パートナー',
+              ),
+            ),
+          );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++;
+        ?>
+          <li class="partnerItemList__item partnerItem">
+            <a href="<?php echo post_permalink($post->ID); ?>">
+              <div class='partnerItem__thumbnail' style="background-image: url('<?php
+                echo the_post_thumbnail_url();
+                ?>')">
+              </div>
+              <?php the_title(); ?>
+            </a>
+          </li>
+          <?php if ($while_count % 3 == 0) : ?>
+            </ul>
+            <ul class="partnerItemList">
+          <?php endif; ?>
+        <?php endwhile; ?>
+      </ul>
       <h1>賛同企業</h1>
-      <?php for($i=0;$i<1;$i++) { ?>
-        <ul class="partnerItemList">
-          <?php for($j=0;$j<3;$j++) { ?>
-            <li class="partnerItemList__item partnerItem">
-              <a href="#">
-                <div class='partnerItem__thumbnail' /></div>
-                企業名
-              </a>
-            </li>
-          <?php } ?>
-        </ul>
-      <?php } ?>
+      <ul class="partnerItemList">
+        <?php
+          $args = array(
+            'post_type' => 'partner',
+            'meta_query' => array(
+              array(
+                'key'     => 'partner_type',
+                'value'   => '賛同企業',
+              ),
+            ),
+          );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++;
+        ?>
+          <li class="partnerItemList__item partnerItem">
+            <a href="<?php echo post_permalink($post->ID); ?>">
+              <div class='partnerItem__thumbnail' style="background-image: url('<?php
+                echo the_post_thumbnail_url();
+                ?>')">
+              </div>
+              <?php the_title(); ?>
+            </a>
+          </li>
+          <?php if ($while_count % 3 == 0) : ?>
+            </ul>
+            <ul class="partnerItemList">
+          <?php endif; ?>
+        <?php endwhile; ?>
+      </ul>
       <!-- ここまで -->
     </article>
-  <?php get_sidebar(); ?>
+  <?php
+    $post = $page_post;
+    get_sidebar();
+  ?>
 </div>
 
 <?php get_footer(); ?>

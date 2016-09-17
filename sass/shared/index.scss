@@ -22,7 +22,7 @@
       }
       .eyecatch {
         position: absolute;
-        top: 0;
+        top: -50%;
         left: 0;
         width: 100%;
         height: 100%;
@@ -96,9 +96,18 @@
 
       &__tag {
         font-size: 10px;
+        padding: 2px 5px;
         &--event {
           background: #FF9079;
           padding: 2px 5px;
+        }
+        &--party {
+          background: #0E526E;
+          padding: 2px 5px;
+        }
+        &--class {
+          background: #FCCF00;
+          padding: 2px 8px;
         }
       }
 
@@ -271,6 +280,8 @@
       margin-right: 20px;
 
       a {
+        @include clearfix;
+        display: block;
         text-decoration: none;
         color: $base-text-color;
       }

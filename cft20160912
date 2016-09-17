@@ -1,0 +1,105 @@
+a:8:{s:33:"custom_field_template_before_list";s:4:"<ul>";s:32:"custom_field_template_after_list";s:5:"</ul>";s:34:"custom_field_template_before_value";s:4:"<li>";s:33:"custom_field_template_after_value";s:5:"</li>";s:16:"shortcode_format";a:1:{i:0;s:360:"<table class="cft">
+<tbody>
+<tr>
+<th>Plan</th><td colspan="3">[Plan]</td>
+</tr>
+<tr>
+<th>Favorite Fruits</th><td>[Favorite Fruits]</td>
+<th>Miles Walked</th><td>[Miles Walked]</td>
+</tr>
+<tr>
+<th>Temper Level</th><td colspan="3">[Temper Level]</td>
+</tr>
+<tr>
+<th>Hidden Thought</th><td colspan="3">[Hidden Thought]</td>
+</tr>
+</tbody>
+</table>";}s:3:"css";s:585:".cft { overflow:hidden; }
+.cft:after { content:" "; clear:both; height:0; display:block; visibility:hidden; }
+.cft dl { margin:10px 0; }
+.cft dl:after { content:" "; clear:both; height:0; display:block; visibility:hidden; }
+.cft dt { width:20%; clear:both; float:left; display:inline; font-weight:bold; text-align:center; }
+.cft dt .hideKey { visibility:hidden; }
+.cft dd { margin:0 0 0 21%; }
+.cft dd p.label { font-weight:bold; margin:0; }
+.cft_instruction { margin:10px; }
+.cft fieldset { border:1px solid #CCC; margin:5px; padding:5px; }
+.cft .dl_checkbox { margin:0; }
+";s:5:"posts";a:79:{i:123;s:1:"1";i:122;s:1:"1";i:165;s:1:"0";i:180;s:1:"1";i:91;s:1:"0";i:186;s:1:"0";i:192;s:1:"1";i:231;s:1:"1";i:233;s:1:"1";i:267;s:1:"0";i:283;s:1:"1";i:285;s:1:"1";i:286;s:1:"1";i:287;s:1:"0";i:293;s:1:"0";i:297;s:1:"0";i:303;s:1:"1";i:304;s:1:"0";i:330;s:1:"1";i:347;s:1:"1";i:349;s:1:"0";i:356;s:1:"1";i:358;s:1:"1";i:416;s:1:"1";i:438;s:1:"1";i:441;s:1:"0";i:478;s:1:"1";i:479;s:1:"1";i:483;s:1:"0";i:452;s:1:"0";i:492;s:1:"1";i:515;s:1:"1";i:516;s:1:"1";i:555;s:1:"0";i:579;s:1:"1";i:582;s:1:"0";i:627;s:1:"0";i:646;s:1:"1";i:662;s:1:"1";i:664;s:1:"0";i:717;s:1:"1";i:718;s:1:"1";i:720;s:1:"0";i:739;s:1:"0";i:732;s:1:"0";i:748;s:1:"1";i:755;s:1:"1";i:756;s:1:"0";i:802;s:1:"0";i:808;s:1:"0";i:813;s:1:"1";i:853;s:1:"0";i:861;s:1:"1";i:926;s:1:"1";i:942;s:1:"0";i:948;s:1:"1";i:980;s:1:"1";i:981;s:1:"1";i:982;s:1:"0";i:990;s:1:"0";i:999;s:1:"0";i:1016;s:1:"0";i:1071;s:1:"1";i:1117;s:1:"0";i:1126;s:1:"0";i:1145;s:1:"0";i:1168;s:1:"1";i:1170;s:1:"1";i:1172;s:1:"1";i:1173;s:1:"0";i:32;s:1:"2";i:35;s:1:"2";i:36;s:1:"2";i:37;s:1:"2";i:38;s:1:"2";i:39;s:1:"2";i:40;s:1:"2";i:42;s:1:"1";i:55;s:1:"4";}s:13:"custom_fields";a:5:{i:0;a:9:{s:5:"title";s:33:"デフォルトテンプレート";s:7:"content";s:789:"[showTop]
+type = checkbox
+value = show
+label = トップページ／サイドバーに表示
+
+[title]
+type = text
+size = 35
+label = イベント名
+
+[date]
+type = text
+size = 35
+label = 開催日
+
+[time]
+type = text
+size = 35
+label = 開催時間
+
+[place]
+type = text
+size = 35
+label = 開催場所
+
+[address]
+type = text
+size = 35
+label = 住所（googleMapにリンクします※要確認）
+
+[number]
+type = text
+size = 35
+label = 人数
+
+[fee]
+type = textarea
+rows = 6
+cols = 56
+label = 参加費
+
+[p_url]
+type = text
+size = 35
+label = 会場HP
+
+[url]
+type = text
+size = 35
+label = 関連HP
+
+[reserve]
+type=textarea
+rows = 6
+cols = 56
+label = 参加予約方法
+
+[note]
+type = textarea
+rows = 6
+cols = 56
+label = 備考
+
+";s:11:"instruction";s:0:"";s:8:"category";s:1:"3";s:4:"post";s:0:"";s:9:"post_type";s:4:"post";s:16:"custom_post_type";s:0:"";s:14:"template_files";s:0:"";s:6:"format";s:0:"";}i:1;a:9:{s:5:"title";s:9:"INTERVIEW";s:7:"content";s:127:"[url2]
+type = text
+size = 50
+label = 記事にリンクを設定する場合、リンク先URLを記入してください。";s:11:"instruction";s:0:"";s:8:"category";s:0:"";s:4:"post";s:0:"";s:16:"custom_post_type";s:9:"interview";s:14:"template_files";s:0:"";s:7:"disable";s:1:"1";s:6:"format";s:0:"";}i:2;a:9:{s:5:"title";s:14:"Topicのタグ";s:7:"content";s:97:"[topic_tag]
+type = radio
+value = Event # Party # Class
+default = Event
+label = TOPICのタグ";s:11:"instruction";s:0:"";s:8:"category";s:0:"";s:4:"post";s:0:"";s:9:"post_type";s:0:"";s:16:"custom_post_type";s:5:"topic";s:14:"template_files";s:0:"";s:6:"format";s:0:"";}i:3;a:9:{s:5:"title";s:12:"Partner Type";s:7:"content";s:119:"[partner_type]
+type = radio
+value = パートナー # 賛同企業
+default = Event
+label = パートナーの種類";s:11:"instruction";s:0:"";s:8:"category";s:0:"";s:4:"post";s:0:"";s:9:"post_type";s:0:"";s:16:"custom_post_type";s:7:"partner";s:14:"template_files";s:0:"";s:6:"format";s:0:"";}i:4;a:9:{s:5:"title";s:8:"Movie ID";s:7:"content";s:62:"[movie_id]
+type = text
+size = 50
+label = Youtubeの動画ID";s:11:"instruction";s:0:"";s:8:"category";s:0:"";s:4:"post";s:0:"";s:9:"post_type";s:0:"";s:16:"custom_post_type";s:7:"cooking";s:14:"template_files";s:0:"";s:6:"format";s:0:"";}}}

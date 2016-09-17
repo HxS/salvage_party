@@ -163,14 +163,17 @@ ul.pagination li:not(:last-child)::after {
   width: 48%;
   margin: 0 14px 32px 0;
 }
-.mainContent--topic .topicList__item a{
+
+.mainContent--topic .topicList__item a {
   text-decoration: none;
+  display: block;
   color: #010101;
 }
 .mainContent--topic .topicList__item .topicListItem__thumbnail{
   width: 100%;
   height: 220px;
   background-size: cover;
+  background-color: #f0f0f0;
 }
 .topicListItem__description{
   margin: 10px 0 0 0;
@@ -196,11 +199,21 @@ ul.pagination li:not(:last-child)::after {
   position: relative;
   padding: 2px 14px 2px 14px;
   left: 0;
-  top: 16px;
+  top: 18px;
   background-color: #666;
   color: #efefef;
   font-size: 8pt;
   font-weight: bold;
+}
+
+.topicListItem__thumbnail-tag--event {
+  background: #FF9079;
+}
+.topicListItem__thumbnail-tag--party {
+  background: #0E526E;
+}
+.topicListItem__thumbnail-tag--class {
+  background: #FCCF00;
 }
 
 .topicListItem__topic .topicListItem__thumbnail-tag {

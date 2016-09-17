@@ -1,11 +1,7 @@
-<?php
-/*
-Template Name: [固定ページ]SNSで共有可能な固定ページ
-*/
+<?php get_header(); ?>
 
-get_header(); ?>
 
-<div class="mainContent mainContent--page">
+<div class="mainContent mainContent--topicDetail">
   <?php
     global $more;
     if(have_posts()) :
@@ -17,13 +13,7 @@ get_header(); ?>
           <h2 class="contentHeader__title">
             <?php the_title(); ?>
           </h2>
-          <?php breadcrumb(); ?>
         </header>
-
-        <article class="mainContent__article">
-          <?php the_content(); ?>
-          <?php get_template_part('modules/module-sns'); ?>
-        </article>
 
         <?php
       endwhile;
@@ -35,6 +25,20 @@ get_header(); ?>
 
     <?php endif; ?>
 
+
+    <article class="mainContent__article">
+      <!-- ここから -->
+      <?php if (get_the_post_thumbnail_url()): ?>
+        <img class="topicDetail__image" src="<?php
+          echo the_post_thumbnail_url();
+        ?>">
+      <?php endif; ?>
+
+      <?php the_content(); ?>
+
+      <?php get_template_part('modules/module-sns'); ?>
+      <!-- ここまで -->
+    </article>
   <?php get_sidebar(); ?>
 </div>
 

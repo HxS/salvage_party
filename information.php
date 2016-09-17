@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: RECIPE
+Template Name: INFORMATION
 */
 
 get_header(); ?>
@@ -40,20 +40,29 @@ get_header(); ?>
     <ul class="topicList__list clearfix">
       <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
-          'post_type' => 'recipe',
+          'post_type' => 'information',
           'posts_per_page' => 8,
           'paged' => $paged
         );
         $loop = new WP_Query( $args );
+        $while_count = 0;
         while ( $loop->have_posts() ) : $loop->the_post();
+          $while_count++;
       ?>
         <li class="topicList__item topicListItem topicListItem-topic">
           <a href="<?php echo post_permalink($post->ID); ?>">
+            <div class="topicListItem__thumbnail-tag topicListItem__thumbnail-tag--<?php
+              $term_list = wp_get_post_terms($post->ID, 'information_tag', array("fields" => "names"));
+              echo strtolower($term_list[0]);
+            ?>"><?php
+              echo $term_list[0];
+            ?></div>
             <div class="topicListItem__thumbnail" style="background-image: url('<?php
               echo the_post_thumbnail_url();
               ?>')">
             </div>
             <div class="topicListItem__description">
+              <time><?php the_time('Y/m/d') ?></time>
               <title><?php the_title(); ?></title>
               <small><?php
                 if(mb_strlen($post->post_content, 'UTF-8')>100){

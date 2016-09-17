@@ -1,12 +1,7 @@
-<?php
-/*
-Template Name: CONTACT
-*/
-
-get_header(); ?>
+<?php get_header(); ?>
 
 
-<div class="mainContent mainContent--widePage">
+<div class="mainContent mainContent--topicDetail mainContent--widePage">
   <?php
     global $more;
     if(have_posts()) :
@@ -18,10 +13,6 @@ get_header(); ?>
           <h2 class="contentHeader__title">
             <?php the_title(); ?>
           </h2>
-          <p class="contentHeader__subTitle">
-            サブタイトルを表示
-          </p>
-          <?php breadcrumb(); ?>
         </header>
 
         <?php
@@ -35,9 +26,16 @@ get_header(); ?>
     <?php endif; ?>
 
 
-    <article class="mainContent__article">
+    <article class="mainContent__article ">
+      <!-- ここから -->
+      <iframe id="ytplayer" type="text/html" width="960" height="540" src="http://www.youtube.com/embed/<?php
+        echo get_post_meta( get_the_ID(), 'movie_id', true );
+      ?>" frameborder="0"></iframe>
+
       <?php the_content(); ?>
-      <?php echo do_shortcode('[contact-form-7 id="7" title="Contact form 1"]'); ?>
+
+      <?php get_template_part('modules/module-sns'); ?>
+      <!-- ここまで -->
     </article>
 </div>
 
