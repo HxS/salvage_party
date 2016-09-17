@@ -39,7 +39,12 @@ get_header(); ?>
       <!-- ここから -->
       <ul class="scheduleItemList">
         <?php
-        $args = array( 'post_type' => 'schedule', 'posts_per_page' => 5 );
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $args = array(
+          'post_type' => 'schedule',
+          'posts_per_page' => 5,
+          'paged' => $paged
+        );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();
         ?>
@@ -94,7 +99,14 @@ get_header(); ?>
       </ul>
 
       <?php
-        pagination($additional_loop->max_num_pages);
+      $big = 999999999; // need an unlikely integer
+
+      echo paginate_links( array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format' => '?paged=%#%',
+        'current' => max( 1, get_query_var('paged') ),
+        'total' => $loop->max_num_pages
+      ) );
       ?>
       <!-- ここまで -->
     </article>
