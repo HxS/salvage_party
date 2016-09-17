@@ -163,3 +163,323 @@ function my_box_save($post_id) {
   }
 }
 add_action('save_post', 'my_box_save');
+
+// CPTUI Post Type
+
+add_action( 'init', 'cptui_register_my_cpts' );
+function cptui_register_my_cpts() {
+	$labels = array(
+		"name" => __( 'Topic', 'salvageparty' ),
+		"singular_name" => __( 'Topic', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Topic', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "TOPICです",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "topic", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail", "custom-fields" ),					);
+	register_post_type( "topic", $args );
+
+	$labels = array(
+		"name" => __( 'Report', 'salvageparty' ),
+		"singular_name" => __( 'Report', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Report', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "report", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail" ),					);
+	register_post_type( "report", $args );
+
+	$labels = array(
+		"name" => __( 'Interview and Column', 'salvageparty' ),
+		"singular_name" => __( 'Interview & Column', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Interview and Column', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "interview", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail" ),					);
+	register_post_type( "interview", $args );
+
+	$labels = array(
+		"name" => __( 'Information', 'salvageparty' ),
+		"singular_name" => __( 'Information', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Information', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "information", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor" ),					);
+	register_post_type( "information", $args );
+
+	$labels = array(
+		"name" => __( 'Cooking(Movie)', 'salvageparty' ),
+		"singular_name" => __( 'Cooking(Movie)', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Cooking(Movie)', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "cooking", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "custom-fields" ),					);
+	register_post_type( "cooking", $args );
+
+	$labels = array(
+		"name" => __( 'Recipe', 'salvageparty' ),
+		"singular_name" => __( 'Recipe', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Recipe', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "recipe", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail" ),					);
+	register_post_type( "recipe", $args );
+
+	$labels = array(
+		"name" => __( 'Chef', 'salvageparty' ),
+		"singular_name" => __( 'Chef', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Chef', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "chef", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail" ),					);
+	register_post_type( "chef", $args );
+
+	$labels = array(
+		"name" => __( 'Ambassador', 'salvageparty' ),
+		"singular_name" => __( 'Ambassador', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Ambassador', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "ambassador", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail" ),					);
+	register_post_type( "ambassador", $args );
+
+	$labels = array(
+		"name" => __( 'Schedule', 'salvageparty' ),
+		"singular_name" => __( 'Schedule', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Schedule', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "schedule", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail", "custom-fields" ),					);
+	register_post_type( "schedule", $args );
+
+	$labels = array(
+		"name" => __( 'Partner', 'salvageparty' ),
+		"singular_name" => __( 'Partner', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Partner', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "partner", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail" ),					);
+	register_post_type( "partner", $args );
+
+// End of cptui_register_my_cpts()
+}
+
+// CPTUI Taxonomies
+
+add_action( 'init', 'cptui_register_my_taxes' );
+function cptui_register_my_taxes() {
+	$labels = array(
+		"name" => __( 'Information Tag', 'salvageparty' ),
+		"singular_name" => __( 'Information Tag', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Information Tag', 'salvageparty' ),
+		"labels" => $labels,
+		"public" => true,
+		"hierarchical" => false,
+		"label" => "Information Tag",
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => array( 'slug' => 'information_tag', 'with_front' => true, ),
+		"show_admin_column" => false,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"show_in_quick_edit" => false,
+	);
+	register_taxonomy( "information_tag", array( "information" ), $args );
+
+	$labels = array(
+		"name" => __( 'イベント開催地域', 'salvageparty' ),
+		"singular_name" => __( 'イベント開催地域', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'イベント開催地域', 'salvageparty' ),
+		"labels" => $labels,
+		"public" => true,
+		"hierarchical" => false,
+		"label" => "イベント開催地域",
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => array( 'slug' => 'event_region', 'with_front' => true, ),
+		"show_admin_column" => false,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"show_in_quick_edit" => false,
+	);
+	register_taxonomy( "event_region", array( "schedule" ), $args );
+
+// End cptui_register_my_taxes()
+}
