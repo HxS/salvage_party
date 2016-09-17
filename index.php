@@ -89,7 +89,9 @@
         endwhile; ?>
       </ul>
     </div>
-    <a class="pickUp__moreButton" href="#">More</a>
+    <a class="pickUp__moreButton" href="<?php
+      echo esc_url( get_permalink( get_page_by_title( 'TOPIC' ) ) );
+    ?>">More</a>
   </div>
 
   <div class="index__report report">
@@ -124,7 +126,9 @@
           <?php endwhile; ?>
         </ul>
     </div>
-    <a class="report__moreButton" href="#">More</a>
+    <a class="report__moreButton" href="<?php
+      echo esc_url( get_permalink( get_page_by_title( 'REPORT' ) ) );
+    ?>">More</a>
   </div>
 
   <div class="index__interview interview">
@@ -161,7 +165,9 @@
             <?php endif; ?>
           <?php endwhile; ?>
         </ul>
-        <a class="interview__moreButton" href="#">More</a>
+        <a class="interview__moreButton" href="<?php
+          echo esc_url( get_permalink( get_page_by_title( 'FEATURE' ) ) );
+        ?>">More</a>
       </div>
 
       <ul class="interviewLists--newest">
@@ -201,11 +207,14 @@
         <small>サルベージ・クッキング</small>
       </h3>
       <div class="scroll">
+        <?php
+          $while_count = 0;
+          $args = array( 'post_type' => 'cooking',);
+          $loop = new WP_Query( $args );
+          $content_count = $loop->post_count
+        ?>
         <ul class="movieList__list" style="width: <?php echo 254 * $content_count; ?>px">
           <?php
-          $while_count = 0;
-          $args = array( 'post_type' => 'cooking', 'posts_per_page' => 10 );
-          $loop = new WP_Query( $args );
           while ( $loop->have_posts() ) : $loop->the_post();
             $while_count++
           ?>
@@ -229,15 +238,20 @@
         Recipe<br>
         <small>
           サルベージ・レシピ<br>
-          <a href="#">&gt; ALL</a>
+          <a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'サルベージ・レシピの紹介' ) ) );
+          ?>">&gt; ALL</a>
         </small>
       </h3>
       <div class="scroll">
-        <ul class="recipeList__list" style="width: <?php echo 254 * $content_count; ?>px">
-          <?php
+        <?php
           $while_count = 0;
           $args = array( 'post_type' => 'recipe', 'posts_per_page' => 10 );
           $loop = new WP_Query( $args );
+          $content_count = $loop->post_count
+        ?>
+        <ul class="recipeList__list" style="width: <?php echo 254 * $content_count; ?>px">
+          <?php
           while ( $loop->have_posts() ) : $loop->the_post();
             $while_count++
           ?>
@@ -260,7 +274,9 @@
         Chef<br>
         <small>
           サルベージ・シェフ<br>
-          <a href="#">&gt; ALL</a>
+          <a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'サルベージ・シェフの紹介' ) ) );
+          ?>">&gt; ALL</a>
         </small>
       </h3>
       <div class="scroll">

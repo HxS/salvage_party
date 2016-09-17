@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<div class="mainContent mainContent--page">
+
+<div class="mainContent mainContent--topicDetail mainContent--widePage">
   <?php
     global $more;
     if(have_posts()) :
@@ -12,12 +13,7 @@
           <h2 class="contentHeader__title">
             <?php the_title(); ?>
           </h2>
-          <?php breadcrumb(); ?>
         </header>
-
-        <article class="mainContent__article">
-          <?php the_content(); ?>
-        </article>
 
         <?php
       endwhile;
@@ -29,7 +25,18 @@
 
     <?php endif; ?>
 
-  <?php get_sidebar(); ?>
+
+    <article class="mainContent__article ">
+      <!-- ここから -->
+      <iframe id="ytplayer" type="text/html" width="960" height="540" src="http://www.youtube.com/embed/<?php
+        echo get_post_meta( get_the_ID(), 'movie_id', true );
+      ?>" frameborder="0"></iframe>
+
+      <?php the_content(); ?>
+
+      <?php get_template_part('modules/module-sns'); ?>
+      <!-- ここまで -->
+    </article>
 </div>
 
 <?php get_footer(); ?>

@@ -20,9 +20,6 @@ get_header(); ?>
           <h2 class="contentHeader__title">
             <?php the_title(); ?>
           </h2>
-          <p class="contentHeader__subTitle">
-            サブタイトルを表示
-          </p>
           <?php breadcrumb(); ?>
         </header>
 
@@ -42,10 +39,39 @@ get_header(); ?>
       <ul class="scheduleItemList">
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $meta_query_array = array();
+        if (((int)$_GET['date_filter']) == 1) :
+          array_push(
+            $meta_query_array,
+            array(
+              'key'     => 'status',
+              'value'   => '参加登録可能',
+            )
+          );
+        endif;
+        if (((int)$_GET['date_filter']) == 2) :
+          array_push(
+            $meta_query_array,
+            array(
+              'key'     => 'status',
+              'value'   => 'イベント終了',
+            )
+          );
+        endif;
+        if (isset($_GET['date_filter']) == 1) :
+          array_push(
+            $meta_query_array,
+            array(
+              'key'     => 'organizer',
+              'value'   => $_GET['organizer'],
+            )
+          );
+        endif;
         $args = array(
           'post_type' => 'schedule',
           'posts_per_page' => 5,
-          'paged' => $paged
+          'paged' => $paged,
+          'meta_query' => $meta_query_array
         );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();
@@ -84,10 +110,10 @@ get_header(); ?>
               <p class="scheduleItem__description">
                 <?php
                   if(mb_strlen($post->post_content, 'UTF-8')>100){
-                  	$content= mb_substr(strip_tags($post->post_content), 0, 100, 'UTF-8');
-                  	echo $content.'……';
+                    $content= mb_substr(strip_tags($post->post_content), 0, 100, 'UTF-8');
+                    echo $content.'……';
                   }else{
-                  	echo $post->post_content;
+                    echo $post->post_content;
                   }
                 ?>
               </p>
@@ -108,7 +134,6 @@ get_header(); ?>
       $big = 999999999; // need an unlikely integer
 
       echo paginate_links( array(
-        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
         'format' => '?paged=%#%',
         'current' => max( 1, get_query_var('paged') ),
         'total' => $loop->max_num_pages
@@ -118,7 +143,7 @@ get_header(); ?>
       ?>
       <!-- ここまで -->
     </article>
-  <?php get_sidebar(); ?>
+  <?php get_sidebar('schedule'); ?>
 </div>
 
 <?php get_footer(); ?>

@@ -18,9 +18,6 @@ get_header(); ?>
           <h2 class="contentHeader__title">
             <?php the_title(); ?>
           </h2>
-          <p class="contentHeader__subTitle">
-            サブタイトルを表示
-          </p>
           <?php breadcrumb(); ?>
         </header>
 

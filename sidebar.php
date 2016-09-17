@@ -6,7 +6,7 @@
       $parent_ID = $ancestors[0];
     }
     $child_posts = query_posts(
-      'numberposts=-1&order=ASC&orderby=post_title&' .
+      'numberposts=-1&order=ASC&orderby=menu_order&' .
       'post_type=page&post_parent=' . $parent_ID
     );
     if ( $child_posts ) {

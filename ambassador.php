@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: CHEF
+Template Name: AMBASSADOR
 */
 
 get_header(); ?>
@@ -41,7 +41,7 @@ get_header(); ?>
       <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
-          'post_type' => 'chef',
+          'post_type' => 'ambassador',
           'posts_per_page' => 16,
           'paged' => $paged
         );

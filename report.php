@@ -1,15 +1,16 @@
 <?php
 /*
-Template Name: CHEF
+Template Name: REPORT
 */
 
 get_header(); ?>
 
 
-<div class="mainContent mainContent--chef">
+<div class="mainContent mainContent--topic">
   <?php the_content(); ?>
   <?php
   global $more;
+  global $page_post;
   $page_post = $post;
   if(have_posts()) :
     while(have_posts()) :
@@ -36,28 +37,42 @@ get_header(); ?>
 
   <article class="mainContent__article">
     <!-- ここから -->
-
-    <ul class="chefList__list">
-      <?php
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    <ul class="topicList__list clearfix">
+      <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
-          'post_type' => 'chef',
-          'posts_per_page' => 16,
+          'post_type' => 'report',
+          'posts_per_page' => 8,
           'paged' => $paged
         );
         $loop = new WP_Query( $args );
+        $while_count = 0;
         while ( $loop->have_posts() ) : $loop->the_post();
-          $ambassador_id = get_post_meta($post->ID, "ambassador_id", true);
+          $while_count++;
       ?>
-        <li class="chefList__item chefListItem">
+        <li class="topicList__item topicListItem topicListItem-topic">
           <a href="<?php echo post_permalink($post->ID); ?>">
-            <div class="chefListItem__thumbnail" style="background-image: url('<?php
-             echo the_post_thumbnail_url();
-            ?>')">
+            <div class="topicListItem__thumbnail" style="background-image: url('<?php
+              echo the_post_thumbnail_url();
+              ?>')">
             </div>
-            <?php the_title(); ?>
+            <div class="topicListItem__description">
+              <time><?php the_time('Y/m/d') ?></time>
+              <title><?php the_title(); ?></title>
+              <small><?php
+                if(mb_strlen($post->post_content, 'UTF-8')>100){
+                  $content= mb_substr(strip_tags($post->post_content), 0, 100, 'UTF-8');
+                  echo $content.'……';
+                }else{
+                  echo $post->post_content;
+                }
+              ?></small>
+            </div>
           </a>
         </li>
+        <?php if ($while_count % 2 == 0) : ?>
+          </ul>
+          <ul class="topicList__list clearfix">
+        <?php endif; ?>
       <?php endwhile; ?>
     </ul>
     <?php

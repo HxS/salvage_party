@@ -82,8 +82,8 @@ function breadcrumb(){
 // トップページのyoutubeのID指定
 add_action('admin_menu', 'top_movie_create_menu');
 function register_mysettings() {
-	//register our settings
-	register_setting( 'top-movie-settings-group', 'youtube-id' );
+  //register our settings
+  register_setting( 'top-movie-settings-group', 'youtube-id' );
 }
 
 function top_movie_settings_page() {
@@ -112,10 +112,10 @@ function top_movie_settings_page() {
 <?php }
 
 function top_movie_create_menu() {
-	//create new top-level menu
-	add_menu_page('Top Page Youtube ID Settings', 'トップページのYoutube動画ID', 'administrator', __FILE__, 'top_movie_settings_page', '');
-	//call register settings function
-	add_action( 'admin_init', 'register_mysettings' );
+  //create new top-level menu
+  add_menu_page('Top Page Youtube ID Settings', 'トップページのYoutube動画ID', 'administrator', __FILE__, 'top_movie_settings_page', '');
+  //call register settings function
+  add_action( 'admin_init', 'register_mysettings' );
 }
 
 function add_my_box() {

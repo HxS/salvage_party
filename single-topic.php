@@ -28,6 +28,12 @@
 
     <article class="mainContent__article">
       <!-- ここから -->
+      <div class="topicTag topicTag--<?php
+        echo strtolower(get_post_meta( get_the_ID(), 'topic_tag', true ));
+      ?>"><?php
+        echo get_post_meta( get_the_ID(), 'topic_tag', true );
+      ?></div>
+      <time><?php the_time('Y/m/d') ?></time>
       <?php if (get_the_post_thumbnail_url()): ?>
         <img class="topicDetail__image" src="<?php
           echo the_post_thumbnail_url();

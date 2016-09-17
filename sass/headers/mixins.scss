@@ -41,12 +41,13 @@
   &__subTitle {
     font-size: 10px;
     display: inline-block;
-    margin: 0 60px 0 30px;
+    margin: 0 0 0 30px;
   }
 
   .breadcrumb {
     font-size: 12px;
     display: inline-block;
+    margin-left: 60px;
     div {
       display: inline-block;
     }
