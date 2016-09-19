@@ -9,6 +9,9 @@
       echo get_template_directory_uri() . '/style.css';
     ?>">
     <title>Salvage Party</title>
+    <?php
+      do_action( 'wp_head' );
+    ?>
   </head>
 
   <body>

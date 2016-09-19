@@ -483,3 +483,21 @@ function cptui_register_my_taxes() {
 
 // End cptui_register_my_taxes()
 }
+
+function update_custom_meta_views() {
+  global $post;
+  if ( 'publish' === get_post_status( $post ) && is_single() ) {
+    $views = intval( get_post_meta( $post->ID, '_custom_meta_views', true ) );
+    update_post_meta( $post->ID, '_custom_meta_views', ( $views + 1 ) );
+  }
+}
+add_action( 'wp_head', 'update_custom_meta_views' );
+
+
+function set_custom_meta_views() {
+  global $post;
+  if(!get_post_meta( $post->ID, '_custom_meta_views', true )) {
+    add_post_meta( $post->ID, '_custom_meta_views', ( 0 ) );
+  }
+}
+add_action( 'save_post', 'set_custom_meta_views' );
