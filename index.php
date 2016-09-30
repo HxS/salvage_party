@@ -307,7 +307,7 @@
     <div class="listContent__list listContent__List--producer producerList">
       <h3 class='producerList__title'>
         Salvage<br>
-        Chef<br>
+        Producer<br>
         <small>
           サルベージ・プロデューサー<br>
           <a href="<?php
