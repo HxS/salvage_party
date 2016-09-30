@@ -90,7 +90,7 @@
       </ul>
     </div>
     <a class="pickUp__moreButton" href="<?php
-      echo esc_url( get_permalink( get_page_by_title( 'TOPIC' ) ) );
+      echo esc_url( get_permalink( get_page_by_title( 'Topic' ) ) );
     ?>">More</a>
   </div>
 
@@ -127,7 +127,7 @@
         </ul>
     </div>
     <a class="report__moreButton" href="<?php
-      echo esc_url( get_permalink( get_page_by_title( 'REPORT' ) ) );
+      echo esc_url( get_permalink( get_page_by_title( 'Report' ) ) );
     ?>">More</a>
   </div>
 
@@ -166,7 +166,7 @@
           <?php endwhile; ?>
         </ul>
         <a class="interview__moreButton" href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'FEATURE' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Feature' ) ) );
         ?>">More</a>
       </div>
 
