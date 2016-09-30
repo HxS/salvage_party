@@ -1,0 +1,36 @@
+html, body {
+  font-family: $font-sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  background-size: cover;
+  background-position: center center;
+}
+
+ul {
+  list-style: none;
+}
+
+hr {
+  @include centering-content;
+  border-color: $theme-yellow-color;
+  border-style: solid;
+}
+
+img {
+  max-width: 100%;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+a {
+  transition: opacity 0.2s linear;
+  background: white;
+  &:hover {
+    opacity: 0.5;
+  }
+}

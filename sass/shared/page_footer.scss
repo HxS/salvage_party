@@ -1,0 +1,102 @@
+// .pageFooter
+// ページ全体のフッター
+.pageFooter {
+  width: 100%;
+  min-width: $content-width;
+  margin-top: 50px;
+}
+
+// .footerLinks
+// フッターの黄色い帯のリンク達
+.footerLinks {
+  background-image: url('./images/footer_bg.png');
+  padding: 0;
+  text-align: center;
+}
+
+// .footerLinks
+// フッターの黄色い帯のリンク達
+.footerLink {
+  height: 110px;
+  width: 250px;
+  vertical-align: top;
+  display: inline-block;
+  background-color: white;
+  position: relative;
+  margin: 20px 10px;
+
+  &__title {
+    display: flex;
+    height: 95px;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    &--text {
+      color: black;
+      text-decoration: none !important;
+    }
+  }
+
+  &__description {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    font-size: 10px;
+    color: #656464;
+  }
+}
+
+// .siteMap
+// フッターの自分のサイト内でのリンク
+.siteMap {
+  @include centering-content;
+  padding: 0;
+  font-size: 12px;
+
+  li {
+    display: inline-block;
+    &:not(:last-child)::after {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: 4px;
+      height: 16px;
+      width: 1px;
+      background-color: $line-color;
+    }
+
+    &:first-child a {
+      padding-left: 0;
+    }
+
+    a {
+      @include anchor-font-sanitize;
+      padding: 30px;
+    }
+  }
+}
+
+// .footerNotes
+// footerの注意書きやライセンスの部分
+.footerNotes {
+  @include centering-content;
+  position: relative;
+  &__note {
+    display: inline-block;
+    small {
+      font-size: 9px;
+    }
+  }
+  &__license {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    small {
+      font-size: 12px;
+    }
+  }
+}

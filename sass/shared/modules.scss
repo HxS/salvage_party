@@ -1,0 +1,14 @@
+// module-xxx.phpのスタイルをまとめたCSSr
+
+.snsShareModule {
+  @include outer-container;
+  a {
+    @include span-columns(6);
+    font-size: 16px;
+    background-color: $navy-color;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+  }
+}

@@ -1,27 +1,50 @@
 # Salvage Party Wordpress theme.
 
-## issue
+## getting started
 
-うまくテーマがマウントしてくれない。
-今のところはただのテーマ単体のrepoとして扱って作業を進める。
+### gulp
 
-## 本当はこれがしたい
+CSSとJSをトランスパイルする。
 
 ```
-## getting started
+npm install --save-dev
+npm start
+```
+
+以降、`npm start`実行中はsassファイル、jsファイルに更新があったら
+トランスパイル処理が走るようになる。
+
+### docker / docker-compose
+
+おすすめかも
+
+```
+bash boot.sh
+```
+
+→ http://localhost:8001/ にサーバが立つ
+
+### 普通のLAMP環境 / MAMP
+
+古来からある方法で多分いちばん楽
+
+1. WordPressのzipをDLして配置
+2. `wp-content/themes/` でこのrepositoryをclone
+
+### Vagrant
+
+一応使えるけど非推奨
 
 ```
 vagrant up
 ```
 
-and access http://172.17.8.123/ with your browser
+→ http://172.17.8.123:8001/ にサーバが立つ
 
-OR
+## 設計の方針
 
-```
-docker-compose up -d
-```
-
-and access http://localhost/ with your browser
-
-```
+* docker-compose 系のコマンドをboot.shにまとめています。
+    * docker-compose を介してwordpressのプラグインも導入してます。
+* BEMつかってます。(CSS設計 / クラス名の付け方)
+* babelつかってます。(Alt JS)
+* bourbonつかってます。(Sassのmixin集)

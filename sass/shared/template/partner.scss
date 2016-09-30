@@ -1,0 +1,37 @@
+// partner.php用
+
+.mainContent--partner {
+  h1 {
+    font-size: 28px;
+    font-weight: normal;
+  }
+  .partner {
+    &ItemList {
+      @include outer-container;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+    &Item {
+      @include span-columns(4);
+      overflow: hidden;
+      a {
+        text-decoration: none;
+        color: $base-text-color;
+        display: block;
+      }
+      &__thumbnail {
+        height: 228px;
+        background-size: cover;
+        background-color: $light-gray-color;
+        box-sizing: border-box;
+        padding: 0;
+        vertical-align: bottom;
+        position: relative;
+      }
+      &__description {
+        height: 45px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
