@@ -330,7 +330,7 @@
     }
   }
 
-  .chefList {
+  .chefList, .producerList {
     @include list-content-list;
     &__list {
       width: 1940px;
