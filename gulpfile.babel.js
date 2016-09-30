@@ -47,3 +47,4 @@ gulp.task('browserify', () => {
 });
 
 gulp.task("default", ['sass', 'browserify', 'watch']);
+gulp.task("build", ['sass', 'browserify']);

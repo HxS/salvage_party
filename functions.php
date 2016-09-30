@@ -351,6 +351,32 @@ function cptui_register_my_cpts() {
 	register_post_type( "chef", $args );
 
 	$labels = array(
+		"name" => __( 'Producer', 'salvageparty' ),
+		"singular_name" => __( 'Producer', 'salvageparty' ),
+		);
+
+	$args = array(
+		"label" => __( 'Producer', 'salvageparty' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "producer", "with_front" => true ),
+		"query_var" => true,
+
+		"supports" => array( "title", "editor", "thumbnail" ),					);
+	register_post_type( "producer", $args );
+
+	$labels = array(
 		"name" => __( 'Ambassador', 'salvageparty' ),
 		"singular_name" => __( 'Ambassador', 'salvageparty' ),
 		);
@@ -483,3 +509,21 @@ function cptui_register_my_taxes() {
 
 // End cptui_register_my_taxes()
 }
+
+function update_custom_meta_views() {
+  global $post;
+  if ( 'publish' === get_post_status( $post ) && is_single() ) {
+    $views = intval( get_post_meta( $post->ID, '_custom_meta_views', true ) );
+    update_post_meta( $post->ID, '_custom_meta_views', ( $views + 1 ) );
+  }
+}
+add_action( 'wp_head', 'update_custom_meta_views' );
+
+
+function set_custom_meta_views() {
+  global $post;
+  if(!get_post_meta( $post->ID, '_custom_meta_views', true )) {
+    add_post_meta( $post->ID, '_custom_meta_views', ( 0 ) );
+  }
+}
+add_action( 'save_post', 'set_custom_meta_views' );

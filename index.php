@@ -90,7 +90,7 @@
       </ul>
     </div>
     <a class="pickUp__moreButton" href="<?php
-      echo esc_url( get_permalink( get_page_by_title( 'TOPIC' ) ) );
+      echo esc_url( get_permalink( get_page_by_title( 'Topic' ) ) );
     ?>">More</a>
   </div>
 
@@ -127,7 +127,7 @@
         </ul>
     </div>
     <a class="report__moreButton" href="<?php
-      echo esc_url( get_permalink( get_page_by_title( 'REPORT' ) ) );
+      echo esc_url( get_permalink( get_page_by_title( 'Report' ) ) );
     ?>">More</a>
   </div>
 
@@ -166,7 +166,7 @@
           <?php endwhile; ?>
         </ul>
         <a class="interview__moreButton" href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'FEATURE' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Feature' ) ) );
         ?>">More</a>
       </div>
 
@@ -294,6 +294,42 @@
             <li class="chefList__item chefListItem">
               <a href="<?php echo post_permalink($post->ID); ?>">
                 <div class='chefListItem__thumbnail' style="background-image: url('<?php
+                  echo the_post_thumbnail_url();
+                ?>')" /></div>
+                <?php the_title(); ?>
+              </a>
+            </li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+    </div>
+
+    <div class="listContent__list listContent__List--producer producerList">
+      <h3 class='producerList__title'>
+        Salvage<br>
+        Chef<br>
+        <small>
+          サルベージ・プロデューサー<br>
+          <a href="<?php
+            echo esc_url( get_permalink( get_page_by_title( 'サルベージ・プロデューサーの紹介' ) ) );
+          ?>">&gt; ALL</a>
+        </small>
+      </h3>
+      <div class="scroll">
+        <?php
+          $while_count = 0;
+          $args = array( 'post_type' => 'producer', 'posts_per_page' => 10);
+          $loop = new WP_Query( $args );
+          $content_count = $loop->post_count < 10 ? $loop->post_count : 10;
+        ?>
+        <ul class="producerList__list" style="width: <?php echo 194 * $content_count; ?>px">
+          <?php
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++
+          ?>
+            <li class="producerList__item producerListItem">
+              <a href="<?php echo post_permalink($post->ID); ?>">
+                <div class='producerListItem__thumbnail' style="background-image: url('<?php
                   echo the_post_thumbnail_url();
                 ?>')" /></div>
                 <?php the_title(); ?>

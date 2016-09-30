@@ -1,7 +1,7 @@
     <footer class="pageFooter">
       <ul class="pageFooter__links footerLinks">
         <a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'CONTACT' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Contact' ) ) );
         ?>">
           <li class="footerLinks__link footerLinks__link--contact footerLink">
             <div class="footerLink__title footerLink__title--text">
@@ -29,25 +29,25 @@
 
       <ul class="pageFooter__siteMap siteMap">
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'ABOUT' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'About' ) ) );
         ?>">About</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'ACTION' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Action' ) ) );
         ?>">Action</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'SCHEDULE' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Schedule' ) ) );
         ?>">Schedule</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'TOPIC' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Topic' ) ) );
         ?>">Topic</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'REPORT' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Report' ) ) );
         ?>">Report</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'FEATURE' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Feature' ) ) );
         ?>">Feature</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'INFORMATION' ) ) );
+          echo esc_url( get_permalink( get_page_by_title( 'Information' ) ) );
         ?>">Information</a></li>
         <li><a href="<?php
           echo esc_url( get_permalink( get_page_by_title( 'FAQ' ) ) );
