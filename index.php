@@ -12,7 +12,7 @@
   <ul class="index__banners">
     <li>
       <a href="<?php
-        echo esc_url( get_permalink( get_page_by_title( 'パーティに参加する' ) ) );
+        echo esc_url( get_permalink( get_page_by_path( 'action/join' ) ) );
       ?>">
         <img src="<?php
           echo get_template_directory_uri() . '/images/banner_join.png';
@@ -21,7 +21,7 @@
     </li>
     <li>
       <a href="<?php
-        echo esc_url( get_permalink( get_page_by_title( 'パーティを開く' ) ) );
+        echo esc_url( get_permalink( get_page_by_path( 'action/open' ) ) );
       ?>">
         <img src="<?php
           echo get_template_directory_uri() . '/images/banner_enjoy.png';
@@ -30,7 +30,7 @@
     </li>
     <li>
       <a href="<?php
-        echo esc_url( get_permalink( get_page_by_title( '資格をとる' ) ) );
+        echo esc_url( get_permalink( get_page_by_path( 'action/license' ) ) );
       ?>">
         <img src="<?php
           echo get_template_directory_uri() . '/images/banner_promotion.png';
@@ -39,7 +39,7 @@
     </li>
     <li>
       <a href="<?php
-        echo esc_url( get_permalink( get_page_by_title( '企業として参加する' ) ) );
+        echo esc_url( get_permalink( get_page_by_path( 'action/company' ) ) );
       ?>">
         <img src="<?php
           echo get_template_directory_uri() . '/images/banner_organization.png';
@@ -90,7 +90,7 @@
       </ul>
     </div>
     <a class="pickUp__moreButton" href="<?php
-      echo esc_url( get_permalink( get_page_by_title( 'Topic' ) ) );
+      echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
     ?>">More</a>
   </div>
 
@@ -127,7 +127,7 @@
         </ul>
     </div>
     <a class="report__moreButton" href="<?php
-      echo esc_url( get_permalink( get_page_by_title( 'Report' ) ) );
+      echo esc_url( get_permalink( get_page_by_path( 'report' ) ) );
     ?>">More</a>
   </div>
 
@@ -166,7 +166,7 @@
           <?php endwhile; ?>
         </ul>
         <a class="interview__moreButton" href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Feature' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'feature' ) ) );
         ?>">More</a>
       </div>
 
@@ -239,7 +239,7 @@
         <small>
           サルベージ・レシピ<br>
           <a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'サルベージ・レシピの紹介' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'about/recipe' ) ) );
           ?>">&gt; ALL</a>
         </small>
       </h3>
@@ -275,7 +275,7 @@
         <small>
           サルベージ・シェフ<br>
           <a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'サルベージ・シェフの紹介' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'about/chef' ) ) );
           ?>">&gt; ALL</a>
         </small>
       </h3>
@@ -311,7 +311,7 @@
         <small>
           サルベージ・プロデューサー<br>
           <a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'サルベージ・プロデューサーの紹介' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'about/producer' ) ) );
           ?>">&gt; ALL</a>
         </small>
       </h3>

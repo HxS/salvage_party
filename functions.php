@@ -527,3 +527,230 @@ function set_custom_meta_views() {
   }
 }
 add_action( 'save_post', 'set_custom_meta_views' );
+
+function create_pages_and_setting() {
+  $sample_content = '
+    これはサンプルページです。同じ位置に固定され、(多くのテーマでは) サイトナビゲーションメニューに含まれるため、ブログ投稿とは異なります。サイト訪問者に対して自分のことを説明する自己紹介ページを作成するのが一般的です。たとえば以下のようなものになります。
+    <blockquote>はじめまして。昼間はバイク便のメッセンジャーとして働いていますが、俳優志望でもあります。これは僕のブログです。ロサンゼルスに住み、ジャックという名前のかわいい犬を飼っています。好きなものはピニャコラーダ (通り雨に濡れるのも) 。</blockquote>
+    または、このようなものでもよいでしょう。
+    <blockquote>XYZ 小道具株式会社は1971年の創立以来、高品質の小道具を皆様にご提供させていただいています。ゴッサム・シティに所在する当社では2,000名以上の社員が働いており、様々な形で地域のコミュニティへ貢献しています。</blockquote>
+    新しく WordPress ユーザーになった方は、<a href="http://localhost:8001/wp-admin/">ダッシュボード</a>へ行ってこのページを削除し、独自のコンテンツを含む新しいページを作成してください。それでは、お楽しみください !
+  ';
+  $make_posts = array(
+    array(
+      'post_title'    => 'About',
+      'post_name'     => 'about',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'page.php',
+      'post_content'  => $sample_content,
+      'children'      => array(
+        array(
+          'post_title'    => 'サルベージ・パーティとは',
+          'post_name'     => 'party',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'page.php',
+          'post_content'  => $sample_content,
+          'post_parent'   => get_page_by_path('about')->ID,
+        ),
+        array(
+          'post_title'    => 'フードロスの現状',
+          'post_name'     => 'foodloss',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'page.php',
+          'post_content'  => $sample_content,
+          'post_parent'   => get_page_by_path('about')->ID,
+        ),
+        array(
+          'post_title'    => 'サルベージ・レシピの紹介',
+          'post_name'     => 'recipe',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'recipe.php',
+          'post_content'  => '',
+          'post_parent'   => get_page_by_path('about')->ID,
+        ),
+        array(
+          'post_title'    => 'サルベージ・シェフの紹介',
+          'post_name'     => 'chef',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'chef.php',
+          'post_content'  => '',
+          'post_parent'   => get_page_by_path('about')->ID,
+        ),
+        array(
+          'post_title'    => 'サルベージ・プロデューサーの紹介',
+          'post_name'     => 'producer',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'producer.php',
+          'post_content'  => '',
+          'post_parent'   => get_page_by_path('about')->ID,
+        ),
+        array(
+          'post_title'    => 'サルベージ・アンバサダーの紹介',
+          'post_name'     => 'ambassador',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'ambassador.php',
+          'post_content'  => '',
+          'post_parent'   => get_page_by_path('about')->ID,
+        ),
+        array(
+          'post_title'    => 'パートナー・賛同企業',
+          'post_name'     => 'partner',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'partner.php',
+          'post_content'  => '',
+          'post_parent'   => get_page_by_path('about')->ID,
+        ),
+        array(
+          'post_title'    => '運営母体(外部リンク)',
+          'post_name'     => 'organization',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'page.php',
+          'post_content'  => $sample_content,
+          'post_parent'   => get_page_by_path('about')->ID,
+        ),
+      ),
+    ),
+
+    array(
+      'post_title'    => 'Action',
+      'post_name'     => 'action',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'action.php',
+      'post_content'  => $sample_content,
+      'children'      => array(
+        array(
+          'post_title'    => 'パーティに参加する',
+          'post_name'     => 'join',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'page_sns_sharable.php',
+          'post_content'  => $sample_content,
+          'post_parent'   => get_page_by_path('action')->ID,
+        ),
+        array(
+          'post_title'    => 'パーティを開く',
+          'post_name'     => 'open',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'page_sns_sharable.php',
+          'post_content'  => $sample_content,
+          'post_parent'   => get_page_by_path('action')->ID,
+        ),
+        array(
+          'post_title'    => 'シェフになる',
+          'post_name'     => 'chef',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'page_sns_sharable.php',
+          'post_content'  => $sample_content,
+          'post_parent'   => get_page_by_path('action')->ID,
+        ),
+        array(
+          'post_title'    => '資格をとる',
+          'post_name'     => 'license',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'page_wide.php',
+          'post_content'  => $sample_content,
+          'post_parent'   => get_page_by_path('action')->ID,
+        ),
+        array(
+          'post_title'    => '企業として参加する',
+          'post_name'     => 'company',
+          'post_status'   => 'publish',
+          'post_type'     => 'page',
+          'page_template' => 'page_wide_download.php',
+          'post_content'  => $sample_content,
+          'post_parent'   => get_page_by_path('action')->ID,
+        ),
+      ),
+    ),
+    array(
+      'post_title'    => 'Schedule',
+      'post_name'     => 'schedule',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'schedule.php',
+      'post_content'  => $sample_content,
+    ),
+    array(
+      'post_title'    => 'Topic',
+      'post_name'     => 'topic',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'topic.php',
+      'post_content'  => $sample_content,
+    ),
+    array(
+      'post_title'    => 'Report',
+      'post_name'     => 'report',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'report.php',
+      'post_content'  => $sample_content,
+    ),
+    array(
+      'post_title'    => 'Feature',
+      'post_name'     => 'feature',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'feature.php',
+      'post_content'  => $sample_content,
+    ),
+    array(
+      'post_title'    => 'Information',
+      'post_name'     => 'information',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'information.php',
+      'post_content'  => $sample_content,
+    ),
+    array(
+      'post_title'    => 'FAQ',
+      'post_name'     => 'faq',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'page_wide.php',
+      'post_content'  => $sample_content,
+    ),
+    array(
+      'post_title'    => 'Contact',
+      'post_name'     => 'contact',
+      'post_status'   => 'publish',
+      'post_type'     => 'page',
+      'page_template' => 'page_wide.php',
+      'post_content'  => $sample_content,
+    ),
+  );
+  $count_first = 0;
+  foreach ($make_posts as $make_post) {
+    if (NULL === get_page_by_path( $make_post['post_name'] )) {
+      $insert_args = array_merge($make_post, array('menu_order' => $count_first));
+      wp_insert_post($insert_args);
+    } else {
+      if (!(NULL === $make_post['children'])) {
+        $count_second = 0;
+        foreach ($make_post['children'] as $make_child) {
+          if (NULL === get_page_by_path( $make_post['post_name'] . '/' . $make_child['post_name'] )) {
+            $insert_args = array_merge($make_child, array('menu_order' => $count_second));
+            wp_insert_post($insert_args);
+          }
+          $count_second++;
+        }
+      }
+    }
+    $count_first++;
+  }
+
+}
+add_action('after_setup_theme', 'create_pages_and_setting');

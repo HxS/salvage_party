@@ -25,29 +25,29 @@
       <nav class="pageHeader__navigation">
         <ul>
           <li><a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'About' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'about' ) ) );
           ?>">ABOUT</a></li>
           <li><a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'Action' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'action' ) ) );
           ?>">ACTION</a></li>
           <li><a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'Schedule' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'schedule' ) ) );
           ?>">SCHEDULE</a></li>
           <li><a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'Topic' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
           ?>">TOPIC</a></li>
           <li><a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'Report' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'report' ) ) );
           ?>">REPORT</a></li>
           <li><a href="<?php
-            echo esc_url( get_permalink( get_page_by_title( 'Feature' ) ) );
+            echo esc_url( get_permalink( get_page_by_path( 'feature' ) ) );
           ?>">FEATURE</a></li>
         </ul>
       </nav>
 
       <ul class="pageHeader__contactList">
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Contact' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) );
         ?>"><img src="<?php
           echo get_template_directory_uri() . '/images/contact_mail.png';
         ?>" alt="mail" class="sns-icon" /></a></li>
