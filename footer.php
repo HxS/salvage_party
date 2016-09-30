@@ -1,7 +1,7 @@
     <footer class="pageFooter">
       <ul class="pageFooter__links footerLinks">
         <a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Contact' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) );
         ?>">
           <li class="footerLinks__link footerLinks__link--contact footerLink">
             <div class="footerLink__title footerLink__title--text">
@@ -29,28 +29,28 @@
 
       <ul class="pageFooter__siteMap siteMap">
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'About' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'about' ) ) );
         ?>">About</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Action' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'action' ) ) );
         ?>">Action</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Schedule' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'schedule' ) ) );
         ?>">Schedule</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Topic' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
         ?>">Topic</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Report' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'report' ) ) );
         ?>">Report</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Feature' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'feature' ) ) );
         ?>">Feature</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'Information' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'information' ) ) );
         ?>">Information</a></li>
         <li><a href="<?php
-          echo esc_url( get_permalink( get_page_by_title( 'FAQ' ) ) );
+          echo esc_url( get_permalink( get_page_by_path( 'fAQ' ) ) );
         ?>">FAQ</a></li>
       </ul>
 
