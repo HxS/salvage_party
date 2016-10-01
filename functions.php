@@ -559,7 +559,7 @@ function create_pages_and_setting() {
           'post_name'     => 'foodloss',
           'post_status'   => 'publish',
           'post_type'     => 'page',
-          'page_template' => 'page.php',
+          'page_template' => 'page_link.php',
           'post_content'  => $sample_content,
           'post_parent'   => get_page_by_path('about')->ID,
         ),
