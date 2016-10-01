@@ -70,7 +70,7 @@
                 echo the_post_thumbnail_url();
               ?>')" /><span class='pickUpItem__date'><?php the_time('Y.m.d'); ?></span></div>
               <div class="pickUpItem__description">
-                <span class="pickUpItem__tag--<?php
+                <span class="pickUpItem__tag pickUpItem__tag--<?php
                   echo strtolower(get_post_meta( get_the_ID(), 'topic_tag', true ));
                 ?>"><?php
                   echo get_post_meta( get_the_ID(), 'topic_tag', true );
