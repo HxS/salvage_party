@@ -5,7 +5,7 @@
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'schedule' ) ) );
-    ?>?date_filter=1<?php
+    ?>&date_filter=1<?php
       if (isset($_GET['organizer'])):
         echo '&organizer=' . $_GET['organizer'];
       endif;
@@ -16,7 +16,7 @@
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'schedule' ) ) );
-    ?>?date_filter=2<?php
+    ?>&date_filter=2<?php
       if (isset($_GET['organizer'])):
         echo '&organizer=' . $_GET['organizer'];
       endif;
@@ -27,14 +27,14 @@
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'schedule' ) ) );
-    ?>?date_filter=<?php echo $query_date ?>&organizer=公式主催">
+    ?>&date_filter=<?php echo $query_date ?>&organizer=公式主催">
       <p>主催イベント</p>
     </a>
   </li>
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'schedule' ) ) );
-    ?>?date_filter=<?php echo $query_date ?>&organizer=アンバサダー主催">
+    ?>&date_filter=<?php echo $query_date ?>&organizer=アンバサダー主催">
       <p>アンバサダーイベント</p>
     </a>
   </li>
