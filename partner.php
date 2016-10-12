@@ -54,13 +54,11 @@ get_header(); ?>
             $while_count++;
         ?>
           <li class="partnerItemList__item partnerItem">
-            <a href="<?php echo post_permalink($post->ID); ?>">
-              <div class='partnerItem__thumbnail' style="background-image: url('<?php
-                echo the_post_thumbnail_url();
-                ?>')">
-              </div>
-              <?php the_title(); ?>
-            </a>
+            <div class='partnerItem__thumbnail' style="background-image: url('<?php
+              echo the_post_thumbnail_url();
+              ?>')">
+            </div>
+            <?php the_title(); ?>
           </li>
           <?php if ($while_count % 3 == 0) : ?>
             </ul>
@@ -85,13 +83,11 @@ get_header(); ?>
             $while_count++;
         ?>
           <li class="partnerItemList__item partnerItem">
-            <a href="<?php echo post_permalink($post->ID); ?>">
-              <div class='partnerItem__thumbnail' style="background-image: url('<?php
-                echo the_post_thumbnail_url();
-                ?>')">
-              </div>
-              <?php the_title(); ?>
-            </a>
+            <div class='partnerItem__thumbnail' style="background-image: url('<?php
+              echo the_post_thumbnail_url();
+              ?>')">
+            </div>
+            <?php the_title(); ?>
           </li>
           <?php if ($while_count % 3 == 0) : ?>
             </ul>

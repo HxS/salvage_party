@@ -45,7 +45,9 @@ get_header(); ?>
           'paged' => $paged
         );
         $loop = new WP_Query( $args );
+        $while_count = 0;
         while ( $loop->have_posts() ) : $loop->the_post();
+          $while_count++;
       ?>
         <li class="topicList__item topicListItem topicListItem-topic">
           <a href="<?php echo post_permalink($post->ID); ?>">

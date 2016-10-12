@@ -225,6 +225,12 @@ ul.pagination li:not(:last-child)::after {
   color: #efefef;
 }
 
+.mainContent__article > p > a {
+  text-decoration: none;
+  color: black;
+  border-bottom: solid 3px #fdd000;
+}
+
 /**
  * feature/sns-rolling branch
  * Written by Zero on 2016/9/17

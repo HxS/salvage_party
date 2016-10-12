@@ -13,28 +13,28 @@
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
-    ?>?topic_tag=Event<?php echo $current_sort_query; ?>">
+    ?>&topic_tag=Event<?php echo $current_sort_query; ?>">
       <p>イベント</p>
     </a>
   </li>
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
-    ?>?topic_tag=Party<?php echo $current_sort_query; ?>">
+    ?>&topic_tag=Party<?php echo $current_sort_query; ?>">
       <p>パーティ</p>
     </a>
   </li>
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
-    ?>?topic_tag=Class<?php echo $current_sort_query; ?>">
+    ?>&topic_tag=Class<?php echo $current_sort_query; ?>">
       <p>講習</p>
     </a>
   </li>
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
-    ?>?topic_tag=News<?php echo $current_sort_query; ?>">
+    ?>&topic_tag=News<?php echo $current_sort_query; ?>">
       <p>ニュース</p>
     </a>
   </li>
@@ -47,7 +47,6 @@
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
-      echo '?temp';
       echo $current_tag_query ;
     ?>&sort=newest">
       <p>新着順</p>
@@ -56,7 +55,6 @@
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );
-      echo '?temp';
       echo $current_tag_query ;
     ?>&sort=popular">
       <p>人気順</p>
