@@ -213,6 +213,9 @@
           $loop = new WP_Query( $args );
           $content_count = $loop->post_count
         ?>
+        <?php if($content_count == 0) : ?>
+          <div class="movieList__emptyMessage">Coming soon</div>
+        <?php endif; ?>
         <ul class="movieList__list" style="width: <?php echo 254 * $content_count; ?>px">
           <?php
           while ( $loop->have_posts() ) : $loop->the_post();
@@ -250,6 +253,9 @@
           $loop = new WP_Query( $args );
           $content_count = $loop->post_count
         ?>
+        <?php if($content_count == 0) : ?>
+          <div class="recipeList__emptyMessage">Coming soon</div>
+        <?php endif; ?>
         <ul class="recipeList__list" style="width: <?php echo 254 * $content_count; ?>px">
           <?php
           while ( $loop->have_posts() ) : $loop->the_post();
@@ -286,6 +292,9 @@
           $loop = new WP_Query( $args );
           $content_count = $loop->post_count < 10 ? $loop->post_count : 10;
         ?>
+        <?php if($content_count == 0) : ?>
+          <div class="chefList__emptyMessage">Coming soon</div>
+        <?php endif; ?>
         <ul class="chefList__list" style="width: <?php echo 194 * $content_count; ?>px">
           <?php
           while ( $loop->have_posts() ) : $loop->the_post();
@@ -322,6 +331,9 @@
           $loop = new WP_Query( $args );
           $content_count = $loop->post_count < 10 ? $loop->post_count : 10;
         ?>
+        <?php if($content_count == 0) : ?>
+          <div class="producerList__emptyMessage">Coming soon</div>
+        <?php endif; ?>
         <ul class="producerList__list" style="width: <?php echo 194 * $content_count; ?>px">
           <?php
           while ( $loop->have_posts() ) : $loop->the_post();
