@@ -200,41 +200,6 @@
 
   <div class="index__listContent listContent">
 
-    <div class="listContent__list listContent__List--movie movieList">
-      <h3 class='movieList__title'>
-        Salvage<br>
-        Cooking<br>
-        <small>サルベージ・クッキング</small>
-      </h3>
-      <div class="scroll">
-        <?php
-          $while_count = 0;
-          $args = array( 'post_type' => 'cooking',);
-          $loop = new WP_Query( $args );
-          $content_count = $loop->post_count
-        ?>
-        <?php if($content_count == 0) : ?>
-          <div class="movieList__emptyMessage">Coming soon</div>
-        <?php endif; ?>
-        <ul class="movieList__list" style="width: <?php echo 254 * $content_count; ?>px">
-          <?php
-          while ( $loop->have_posts() ) : $loop->the_post();
-            $while_count++
-          ?>
-            <li class="movieList__item movieListItem">
-              <a href="<?php echo post_permalink($post->ID); ?>">
-                <div class='movieListItem__thumbnail'
-                  style="background-image: url('http://i.ytimg.com/vi/<?php
-                  echo get_post_meta( get_the_ID(), 'movie_id', true );
-                ?>/mqdefault.jpg')" /></div>
-                <?php the_title(); ?>
-              </a>
-            </li>
-          <?php endwhile; ?>
-        </ul>
-      </div>
-    </div>
-
     <div class="listContent__list listContent__List--recipe recipeList">
       <h3 class='recipeList__title'>
         Salvage<br>
@@ -344,6 +309,41 @@
                 <div class='producerListItem__thumbnail' style="background-image: url('<?php
                   echo the_post_thumbnail_url();
                 ?>')" /></div>
+                <?php the_title(); ?>
+              </a>
+            </li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+    </div>
+
+    <div class="listContent__list listContent__List--movie movieList">
+      <h3 class='movieList__title'>
+        Salvage<br>
+        Cooking<br>
+        <small>サルベージ・クッキング</small>
+      </h3>
+      <div class="scroll">
+        <?php
+          $while_count = 0;
+          $args = array( 'post_type' => 'cooking',);
+          $loop = new WP_Query( $args );
+          $content_count = $loop->post_count
+        ?>
+        <?php if($content_count == 0) : ?>
+          <div class="movieList__emptyMessage">Coming soon</div>
+        <?php endif; ?>
+        <ul class="movieList__list" style="width: <?php echo 254 * $content_count; ?>px">
+          <?php
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $while_count++
+          ?>
+            <li class="movieList__item movieListItem">
+              <a href="<?php echo post_permalink($post->ID); ?>">
+                <div class='movieListItem__thumbnail'
+                  style="background-image: url('http://i.ytimg.com/vi/<?php
+                  echo get_post_meta( get_the_ID(), 'movie_id', true );
+                ?>/mqdefault.jpg')" /></div>
                 <?php the_title(); ?>
               </a>
             </li>
