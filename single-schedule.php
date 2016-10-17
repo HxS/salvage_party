@@ -39,7 +39,7 @@
       <?php get_template_part('modules/module-sns'); ?>
       <!-- ここまで -->
     </article>
-  <?php get_sidebar('detail'); ?>
+  <?php get_sidebar('schedule'); ?>
 </div>
 
 <?php get_footer(); ?>

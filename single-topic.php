@@ -45,7 +45,7 @@
       <?php get_template_part('modules/module-sns'); ?>
       <!-- ここまで -->
     </article>
-  <?php get_sidebar(); ?>
+  <?php get_sidebar('detail'); ?>
 </div>
 
 <?php get_footer(); ?>

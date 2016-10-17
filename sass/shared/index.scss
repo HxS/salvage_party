@@ -3,7 +3,7 @@
 
 .index {
   &__movie {
-    $movie-height: 450px;
+    $movie-height: 700px;
     height: $movie-height;
     overflow: hidden;
     position: relative;
@@ -296,6 +296,15 @@
     &__list {
       height: 500px;
       padding-left: 0;
+    }
+    &__emptyMessage {
+      color: #aaa;
+      font-size: 37px;
+      height: 200px;
+      margin: 30px 0 30px 0;
+      padding-top: 73px;
+      border: dashed 6px #eaeaea;
+      text-align: center;
     }
   }
 
