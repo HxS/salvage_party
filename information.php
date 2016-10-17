@@ -101,7 +101,7 @@ get_header(); ?>
     ?>
     <!-- ここまで -->
   </article>
-  <?php get_sidebar(); ?>
+  <?php get_sidebar('information'); ?>
 </div>
 
 <?php get_footer(); ?>
