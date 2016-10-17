@@ -46,6 +46,13 @@ get_header(); ?>
         );
         $loop = new WP_Query( $args );
         $while_count = 0;
+        if ($_GET['sort'] == 'popular') :
+          $args = array_merge($args, array(
+            'orderby' => 'meta_value_num',
+            'meta_key' => '_custom_meta_views',
+            'order' => 'DESC'
+          ));
+        endif;
         while ( $loop->have_posts() ) : $loop->the_post();
           $while_count++;
       ?>
