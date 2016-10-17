@@ -638,7 +638,7 @@ function create_pages_and_setting() {
           'post_parent'   => get_page_by_path('action')->ID,
         ),
         array(
-          'post_title'    => 'パーティを開く',
+          'post_title'    => 'サルベージアンバサダーになる',
           'post_name'     => 'open',
           'post_status'   => 'publish',
           'post_type'     => 'page',
