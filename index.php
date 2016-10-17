@@ -357,23 +357,12 @@
   <div class="index__instagram instagram">
     <header class="indexTitles">
       <h2 class="indexTitles__title">
+        あなたもサルベージアンバサダー<br>
         Instagram #サルベージパーティ #サルベージクッキング
       </h2>
     </header>
     <div class="instagram__lists">
-      <?php for($i=0;$i<2;$i++) { ?>
-        <ul class="instagramItemList">
-          <?php for($j=0;$j<10;$j++) { ?>
-            <li class="instagramItemList__item instagramItem">
-              <a href="#">
-                <img class="instagramItemList__thumbnail" src='<?php
-                  echo get_template_directory_uri() . '/images/mock_instagram.png';
-                ?>' alt='instagram' />
-              </a>
-            </li>
-          <?php } ?>
-        </ul>
-      <?php } ?>
+      <?php echo do_shortcode('[instagram-feed]'); ?>
     </div>
   </div>
 
