@@ -134,7 +134,7 @@ function ambassador_info_form() {
     <option name='0'>指定なし</option>
     <?php
     $current_id = get_post_meta( $post->ID, 'ambassador_id', true );
-    $args = array( 'post_type' => 'ambassador');
+    $args = array( 'post_type' => 'ambassador', 'nopaging' => 1);
     $loop = new WP_Query( $args );
     while ( $loop->have_posts() ) :
       $loop->the_post();
@@ -638,7 +638,7 @@ function create_pages_and_setting() {
           'post_parent'   => get_page_by_path('action')->ID,
         ),
         array(
-          'post_title'    => 'パーティを開く',
+          'post_title'    => 'サルベージアンバサダーになる',
           'post_name'     => 'open',
           'post_status'   => 'publish',
           'post_type'     => 'page',
@@ -753,4 +753,21 @@ function create_pages_and_setting() {
   }
 
 }
+
+add_filter( 'image_send_to_editor', 'remove_image_attribute', 10 );
+add_filter( 'post_thumbnail_html', 'remove_image_attribute', 10 );
+
+function remove_image_attribute( $html ){
+	$html = preg_replace( '/(width|height)="\d*"\s/', '', $html );
+	$html = preg_replace( '/class=[\'"]([^\'"]+)[\'"]/i', '', $html );
+	$html = preg_replace( '/title=[\'"]([^\'"]+)[\'"]/i', '', $html );
+	$html = preg_replace( '/<a href=".+">/', '', $html );
+	$html = preg_replace( '/<\/a>/', '', $html );
+	return $html;
+}
 add_action('after_setup_theme', 'create_pages_and_setting');
+
+add_action( 'admin_print_styles', 'admin_css_custom' );
+function admin_css_custom() {
+	echo '<style>.attachment-details label[data-setting="caption"], .attachment-details label[data-setting="description"], div.attachment-display-settings { display: none; }</style>';
+}

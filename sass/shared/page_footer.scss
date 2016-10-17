@@ -4,14 +4,21 @@
   width: 100%;
   min-width: $content-width;
   margin-top: 50px;
+  a {
+    background: none;
+  }
 }
 
 // .footerLinks
 // フッターの黄色い帯のリンク達
 .footerLinks {
   background-image: url('./images/footer_bg.png');
+  background-size: contain;
   padding: 0;
   text-align: center;
+  a:hover {
+    opacity: 1.0;
+  }
 }
 
 // .footerLinks
@@ -25,6 +32,18 @@
   position: relative;
   margin: 20px 10px;
 
+  &:hover {
+    .footerLink {
+      &__title {
+        opacity: 0.5;
+      }
+
+      &__description {
+        opacity: 0.5;
+      }
+    }
+  }
+
   &__title {
     display: flex;
     height: 95px;
@@ -33,6 +52,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    transition: opacity 0.2s linear;
     &--text {
       color: black;
       text-decoration: none !important;
@@ -47,6 +67,7 @@
     text-align: center;
     font-size: 10px;
     color: #656464;
+    transition: opacity 0.2s linear;
   }
 }
 

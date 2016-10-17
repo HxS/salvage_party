@@ -2,16 +2,14 @@
       <ul class="pageFooter__links footerLinks">
         <a href="<?php
           echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) );
-        ?>">
-          <li class="footerLinks__link footerLinks__link--contact footerLink">
-            <div class="footerLink__title footerLink__title--text">
-              CONTACT
-            </div>
-            <small class="footerLink__description">
-              取材依頼・その他お問い合わせ
-            </small>
-          </li>
-        </a>
+        ?>"><li class="footerLinks__link footerLinks__link--contact footerLink">
+          <div class="footerLink__title footerLink__title--text">
+            CONTACT
+          </div>
+          <small class="footerLink__description">
+            取材依頼・その他お問い合わせ
+          </small>
+        </li></a>
         <a href="http://foodsalvage.or.jp" target="_blank">
           <li class="footerLinks__link footerLinks__link--foodSalvage footerLink">
             <div class="footerLink__title footerLink__title--image">
