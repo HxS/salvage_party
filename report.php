@@ -44,8 +44,6 @@ get_header(); ?>
           'posts_per_page' => 8,
           'paged' => $paged
         );
-        $loop = new WP_Query( $args );
-        $while_count = 0;
         if ($_GET['sort'] == 'popular') :
           $args = array_merge($args, array(
             'orderby' => 'meta_value_num',
@@ -53,6 +51,8 @@ get_header(); ?>
             'order' => 'DESC'
           ));
         endif;
+        $loop = new WP_Query( $args );
+        $while_count = 0;
         while ( $loop->have_posts() ) : $loop->the_post();
           $while_count++;
       ?>
