@@ -134,7 +134,7 @@ function ambassador_info_form() {
     <option name='0'>指定なし</option>
     <?php
     $current_id = get_post_meta( $post->ID, 'ambassador_id', true );
-    $args = array( 'post_type' => 'ambassador');
+    $args = array( 'post_type' => 'ambassador', 'nopaging' => 1);
     $loop = new WP_Query( $args );
     while ( $loop->have_posts() ) :
       $loop->the_post();
