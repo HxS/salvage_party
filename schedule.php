@@ -6,7 +6,7 @@ Template Name: SCHEDULE
 get_header(); ?>
 
 
-<div class="mainContent mainContent--schedule">
+<div class="mainContent wow slideInUp mainContent--schedule">
   <?php
     global $more;
     global $page_post;
@@ -34,7 +34,7 @@ get_header(); ?>
     <?php endif; ?>
 
 
-    <article class="mainContent__article">
+    <article class="mainContent__article wow slideInLeft">
       <!-- ここから -->
       <ul class="scheduleItemList">
         <?php

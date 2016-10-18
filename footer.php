@@ -1,8 +1,8 @@
     <footer class="pageFooter">
-      <ul class="pageFooter__links footerLinks">
+      <ul class="pageFooter__links footerLinks wow slideInUp">
         <a href="<?php
           echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) );
-        ?>"><li class="footerLinks__link footerLinks__link--contact footerLink">
+        ?>"><li class="footerLinks__link footerLinks__link--contact footerLink wow slideInLeft">
           <div class="footerLink__title footerLink__title--text">
             CONTACT
           </div>
@@ -11,7 +11,7 @@
           </small>
         </li></a>
         <a href="http://foodsalvage.or.jp" target="_blank">
-          <li class="footerLinks__link footerLinks__link--foodSalvage footerLink">
+          <li class="footerLinks__link footerLinks__link--foodSalvage footerLink wow slideInRight">
             <div class="footerLink__title footerLink__title--image">
               <img src="<?php
                 echo get_template_directory_uri();
@@ -25,7 +25,7 @@
         </a>
       </ul>
 
-      <ul class="pageFooter__siteMap siteMap">
+      <ul class="pageFooter__siteMap siteMap wow slideInUp">
         <li><a href="<?php
           echo esc_url( get_permalink( get_page_by_path( 'about' ) ) );
         ?>">About</a></li>
@@ -52,7 +52,7 @@
         ?>">FAQ</a></li>
       </ul>
 
-      <div class="pageFooter__notes footerNotes">
+      <div class="pageFooter__notes footerNotes wow slideInUp">
         <p class="footerNotes__note">
           <small>
             本ウェブサイトは、東京都環境局「持続可能な資源利用」に向けたモデル事業
@@ -70,5 +70,11 @@
     <script src="<?php
       echo get_template_directory_uri() . '/js/app.babel.js';
     ?>"></script>
+    <script src="<?php
+      echo get_template_directory_uri() . '/js/wow.js';
+    ?>"></script>
+    <script type="text/javascript">
+      new WOW().init()
+    </script>
   </body>
 </html>

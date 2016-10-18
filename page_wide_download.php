@@ -5,7 +5,7 @@ Template Name: [固定ページ]入会案内DLリンク付き固定ページ
 
 get_header(); ?>
 
-<div class="mainContent mainContent--widePage">
+<div class="mainContent wow slideInUp mainContent--widePage">
   <?php
     global $more;
     if(have_posts()) :
@@ -20,7 +20,7 @@ get_header(); ?>
           <?php breadcrumb(); ?>
         </header>
 
-        <article class="mainContent__article">
+        <article class="mainContent__article wow slideInLeft">
           <?php the_content(); ?>
           <div class="links">
             <a  href="#">入会案内をダウンロード</a>

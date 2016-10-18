@@ -1,4 +1,4 @@
-<ul class="sidebar">
+<ul class="sidebar wow slideInRight">
   <li><span>参考URL</span></li>
   <?php if (get_post_meta($post->ID, 'reference') == NULL): ?>
     <li><span>なし</span></li>
