@@ -1,7 +1,7 @@
 <?php
   $query_date = $_GET['date_filter'] ? (int)$_GET['date_filter'] : 0;
 ?>
-<ul class="sidebar">
+<ul class="sidebar wow slideInRight">
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'schedule' ) ) );

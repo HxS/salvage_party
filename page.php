@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="mainContent mainContent--page">
+<div class="mainContent wow slideInUp mainContent--page">
   <?php
     global $more;
     if(have_posts()) :
@@ -15,7 +15,7 @@
           <?php breadcrumb(); ?>
         </header>
 
-        <article class="mainContent__article">
+        <article class="mainContent__article wow slideInLeft">
           <?php the_content(); ?>
         </article>
 

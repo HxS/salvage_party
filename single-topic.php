@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<div class="mainContent mainContent--topicDetail">
+<div class="mainContent wow slideInUp mainContent--topicDetail">
   <?php
     global $more;
     if(have_posts()) :
@@ -26,7 +26,7 @@
     <?php endif; ?>
 
 
-    <article class="mainContent__article">
+    <article class="mainContent__article wow slideInLeft">
       <!-- ここから -->
       <div class="topicTag topicTag--<?php
         echo strtolower(get_post_meta( get_the_ID(), 'topic_tag', true ));

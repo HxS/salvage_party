@@ -5,7 +5,7 @@ Template Name: [固定ページ]運営団体についてのリンク付き固定
 
 get_header(); ?>
 
-<div class="mainContent mainContent--page">
+<div class="mainContent wow slideInUp mainContent--page">
   <?php
     global $more;
     if(have_posts()) :
@@ -20,7 +20,7 @@ get_header(); ?>
           <?php breadcrumb(); ?>
         </header>
 
-        <article class="mainContent__article">
+        <article class="mainContent__article wow slideInLeft">
           <?php the_content(); ?>
           <div class="links">
             <a class='link' href="#">運営母体について(Food Salvage)</a>

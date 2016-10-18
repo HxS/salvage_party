@@ -6,7 +6,7 @@ Template Name: AMBASSADOR
 get_header(); ?>
 
 
-<div class="mainContent mainContent--chef">
+<div class="mainContent wow slideInUp mainContent--chef">
   <?php the_content(); ?>
   <?php
   global $more;
@@ -34,7 +34,7 @@ get_header(); ?>
   <?php endif; ?>
 
 
-  <article class="mainContent__article">
+  <article class="mainContent__article wow slideInLeft">
     <!-- ここから -->
 
     <ul class="chefList__list">

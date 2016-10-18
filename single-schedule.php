@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<div class="mainContent mainContent--topicDetail">
+<div class="mainContent wow slideInUp mainContent--topicDetail">
   <?php
     global $more;
     if(have_posts()) :
@@ -26,7 +26,7 @@
     <?php endif; ?>
 
 
-    <article class="mainContent__article">
+    <article class="mainContent__article wow slideInLeft">
       <!-- ここから -->
       <?php if (get_the_post_thumbnail_url()): ?>
         <img class="topicDetail__image" src="<?php

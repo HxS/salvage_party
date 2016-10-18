@@ -6,7 +6,7 @@ Template Name: PARTNER
 get_header(); ?>
 
 
-<div class="mainContent mainContent--partner">
+<div class="mainContent wow slideInUp mainContent--partner">
   <?php
     global $more;
     global $page_post;
@@ -34,7 +34,7 @@ get_header(); ?>
     <?php endif; ?>
 
 
-    <article class="mainContent__article">
+    <article class="mainContent__article wow slideInLeft">
       <?php the_content(); ?>
       <!-- ここから -->
       <h1>パートナー</h1>
