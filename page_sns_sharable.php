@@ -5,7 +5,7 @@ Template Name: [固定ページ]SNSで共有可能な固定ページ
 
 get_header(); ?>
 
-<div class="mainContent mainContent--page">
+<div class="mainContent wow slideInUp mainContent--page">
   <?php
     global $more;
     if(have_posts()) :
@@ -20,7 +20,7 @@ get_header(); ?>
           <?php breadcrumb(); ?>
         </header>
 
-        <article class="mainContent__article">
+        <article class="mainContent__article wow slideInLeft">
           <?php the_content(); ?>
           <?php get_template_part('modules/module-sns'); ?>
         </article>

@@ -6,7 +6,7 @@
   endif;
 ?>
 
-<ul class="sidebar">
+<ul class="sidebar wow slideInRight">
 
   <li>
     <span>ソート</span>

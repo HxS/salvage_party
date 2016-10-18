@@ -6,7 +6,7 @@ Template Name: FEATURE
 get_header(); ?>
 
 
-<div class="mainContent mainContent--topic">
+<div class="mainContent wow slideInUp mainContent--topic">
   <?php the_content(); ?>
   <?php
   global $more;
@@ -35,7 +35,7 @@ get_header(); ?>
   <?php endif; ?>
 
 
-  <article class="mainContent__article">
+  <article class="mainContent__article wow slideInLeft">
     <!-- ここから -->
     <ul class="topicList__list clearfix">
       <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

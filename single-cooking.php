@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<div class="mainContent mainContent--topicDetail mainContent--widePage">
+<div class="mainContent wow slideInUp mainContent--topicDetail mainContent--widePage">
   <?php
     global $more;
     if(have_posts()) :
@@ -26,7 +26,7 @@
     <?php endif; ?>
 
 
-    <article class="mainContent__article ">
+    <article class="mainContent__article wow slideInLeft">
       <!-- ここから -->
       <iframe id="ytplayer" type="text/html" width="960" height="540" src="http://www.youtube.com/embed/<?php
         echo get_post_meta( get_the_ID(), 'movie_id', true );

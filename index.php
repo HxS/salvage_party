@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <ul class="index__banners">
+  <ul class="index__banners wow slideInUp">
     <li>
       <a href="<?php
         echo esc_url( get_permalink( get_page_by_path( 'action/join' ) ) );
@@ -48,7 +48,7 @@
     </li>
   </ul>
 
-  <div class="index__pickUp pickUp">
+  <div class="index__pickUp pickUp wow slideInUp">
     <header class="indexTitles">
       <h2 class="indexTitles__title">
         Pick Up
@@ -94,7 +94,7 @@
     ?>">More</a>
   </div>
 
-  <div class="index__report report">
+  <div class="index__report report wow slideInUp">
     <header class="indexTitles">
       <h2 class="indexTitles__title">
         Salvage Report
@@ -131,7 +131,7 @@
     ?>">More</a>
   </div>
 
-  <div class="index__interview interview">
+  <div class="index__interview interview wow slideInUp">
 
     <header class="indexTitles">
       <h2 class="indexTitles__title indexTitles__title--left">
@@ -198,7 +198,7 @@
 
   <hr>
 
-  <div class="index__listContent listContent">
+  <div class="index__listContent listContent wow slideInUp">
 
     <div class="listContent__list listContent__List--recipe recipeList">
       <h3 class='recipeList__title'>
@@ -354,7 +354,7 @@
 
   </div>
 
-  <div class="index__instagram instagram">
+  <div class="index__instagram instagram wow slideInUp">
     <header class="indexTitles">
       <h2 class="indexTitles__title">
         あなたもサルベージアンバサダー<br>

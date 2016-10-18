@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="<?php
       echo get_template_directory_uri() . '/style.css';
     ?>">
+    <link rel="stylesheet" href="<?php
+      echo get_template_directory_uri() . '/animate.css';
+    ?>">
     <title>Salvage Party</title>
     <?php
       do_action( 'wp_head' );
@@ -15,7 +18,7 @@
   </head>
 
   <body>
-    <header class="pageHeader">
+    <header class="pageHeader wow slideInDown">
       <h1 class="pageHeader__logo">
         <a href="<?php echo esc_url( get_home_url() ); ?>"><img src="<?php
           echo get_template_directory_uri() . '/images/header_logo.png';
