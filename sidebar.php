@@ -1,4 +1,4 @@
-<ul class="sidebar wow slideInRight">
+<ul class="sidebar">
   <?php
     $parent_ID = $post->ID;
     if($post -> post_parent != 0 ){

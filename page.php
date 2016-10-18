@@ -15,7 +15,7 @@
           <?php breadcrumb(); ?>
         </header>
 
-        <article class="mainContent__article wow slideInLeft">
+        <article class="mainContent__article">
           <?php the_content(); ?>
         </article>
 
