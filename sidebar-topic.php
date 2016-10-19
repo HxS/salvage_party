@@ -9,7 +9,7 @@
   endif;
 ?>
 
-<ul class="sidebar wow slideInRight">
+<ul class="sidebar">
   <li>
     <a href="<?php
       echo esc_url( get_permalink( get_page_by_path( 'topic' ) ) );

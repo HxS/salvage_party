@@ -35,7 +35,7 @@ get_header(); ?>
   <?php endif; ?>
 
 
-  <article class="mainContent__article wow slideInLeft">
+  <article class="mainContent__article">
     <!-- ここから -->
     <ul class="topicList__list clearfix">
       <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

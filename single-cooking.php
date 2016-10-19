@@ -26,7 +26,7 @@
     <?php endif; ?>
 
 
-    <article class="mainContent__article wow slideInLeft">
+    <article class="mainContent__article">
       <!-- ここから -->
       <iframe id="ytplayer" type="text/html" width="960" height="540" src="http://www.youtube.com/embed/<?php
         echo get_post_meta( get_the_ID(), 'movie_id', true );

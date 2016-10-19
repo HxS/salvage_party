@@ -20,7 +20,7 @@ get_header(); ?>
           <?php breadcrumb(); ?>
         </header>
 
-        <article class="mainContent__article wow slideInLeft">
+        <article class="mainContent__article">
           <?php the_content(); ?>
           <?php get_template_part('modules/module-sns'); ?>
         </article>

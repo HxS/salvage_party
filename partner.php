@@ -34,7 +34,7 @@ get_header(); ?>
     <?php endif; ?>
 
 
-    <article class="mainContent__article wow slideInLeft">
+    <article class="mainContent__article">
       <?php the_content(); ?>
       <!-- ここから -->
       <h1>パートナー</h1>

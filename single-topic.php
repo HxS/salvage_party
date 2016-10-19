@@ -26,7 +26,7 @@
     <?php endif; ?>
 
 
-    <article class="mainContent__article wow slideInLeft">
+    <article class="mainContent__article">
       <!-- ここから -->
       <div class="topicTag topicTag--<?php
         echo strtolower(get_post_meta( get_the_ID(), 'topic_tag', true ));
