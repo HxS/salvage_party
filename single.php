@@ -28,11 +28,6 @@
 
     <article class="mainContent__article">
       <!-- ここから -->
-      <?php if (get_the_post_thumbnail_url()): ?>
-        <img class="topicDetail__image" src="<?php
-          echo the_post_thumbnail_url();
-        ?>">
-      <?php endif; ?>
 
       <?php the_content(); ?>
 
